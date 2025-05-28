@@ -58,8 +58,8 @@ First import it.</br>
 
 #### `<Route>` decides if a components needs rendering base on its URL path.</br>
 <Route> Includes:
-##### 1. A URL path to render
-##### 2. An ELement prop of the component to render
+###### 1. A URL path to render
+###### 2. An ELement prop of the component to render
 
        import About from './About.js';
        import { RouterProvider, createBrowserRouter, Route } from 'react-router-dom';
