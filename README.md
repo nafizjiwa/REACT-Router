@@ -19,30 +19,32 @@ REACT APPLICATIONS use REACT ROUTER for front end routing solution.</br>
 This allows users navigate between pages without a full page reload, providing seamless.</br>
 
 #### To use React Router Install it
-Install react-router-dom package
+Install react-router-dom package</br>
 
       npm install --save react-router-dom@6
 
-Add routing to a project by importing a common router such as `createBrowserRouter`
+Add routing to a project by importing a common router such as `createBrowserRouter`</br>
 
-  import { createBrowserRouter } from 'react-router-dom';
+      import { createBrowserRouter } from 'react-router-dom';
 
-Initialize the router. Call createBrowserRouter
+Initialize the router. Call createBrowserRouter</br>
 
-  import { createBrowserRouter } from 'react-router-dom';
-  const router = createBrowserRouter( /* application routes are defined here */ );
+      import { createBrowserRouter } from 'react-router-dom';
+      const router = createBrowserRouter( /* application routes are defined here */ );
 
 #### Different views of an application are called Routes (or React components) which need to be rendered.
-First to render make router available at the root with React Router's `RouterProvider`
+First, make router available at the root by importing React Router's `RouterProvider`(1)</br>
+The router determines which routes to render when URL changes</br>
+See below info about the path is passed down as a prop(2)</br>
 
-  import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-  const router = createBrowserRouter( /* application routes are defined here */ );
+    import { RouterProvider (1), createBrowserRouter } from 'react-router-dom';
+    const router = createBrowserRouter( /* application routes are defined here */ );
 
-  export default function App () {
-    return (
-      <RouterProvider router={ router } />
-    );
-  }
+    export default function App () {
+      return (
+        <RouterProvider router={ router } /> (2)
+      );
+    }
 
 #### Define Route components
   
