@@ -120,6 +120,8 @@ Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redi
 `/` refers to ablsolute paths meaning it navigates from the root directory.
 #### How is `NavLink` Different?
 
+     <NavLink to="path">Click Me</NavLink>
+
 When URL path = `to` prop its link has an `active` class</br>
 ##### This impacts Styling: </br>
 CSS styles can be defined for an .active class name.</br>
