@@ -56,7 +56,7 @@ First import it.</br>
 
       import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
 
-#### `<Route>` decides if a components needs rendering base on its URL path.</br>
+#### `<Route>` decides if a components needs rendering based on its URL path.</br>
 <Route> Includes:
 ###### 1. A URL path to render
 ###### 2. An ELement prop of the component to render
@@ -87,9 +87,9 @@ First import it.</br>
           // nested routes here will render along with this <Root/> component
         </Route>
       ));
-##### When Navigating to one of the nested routes that view will render along with any elements that are defined in the <Root/> component
+##### When Navigating to one of the nested routes we Render that view along with all components within <Route>
 
-####
+#### Define Routes: Between `<Root>` and `</Root>` tags Use createBrowserRouter, createRoutesFromELements and Route
 
 
 
