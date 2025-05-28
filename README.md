@@ -106,17 +106,33 @@ First import it.</br>
 ### Linking to Routes (Navigating within an app between pages )
 
 Navigating within pages of an app causes pages to reload. </br>
-So to prevent this React Router offers 2 anchors (whose default of page refresh are disabled).
+React Router offers 2 anchors to prevent reloading (anchor's default if refresh page is disabled).
 1. Link
 2. NavLink
-   
-Anchor Tag Syntax: A `to` prop (the redirect) and wrapped HTML for display (Here both redirect to /about view)
+Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redirects to the /about view)
 
-      <Link to="/about">About</Link>
+       /* First, Components are imported ... */
+   
+      import { ..., Link, NavLink } from 'react-router-dom';
+      <Link to="/about">About</Link> (to = href)
       <NavLink to="/about">About</NavLink>
 
 `/` refers to ablsolute paths meaning it navigates from the root directory.
-First, import these components
+#### How is `NavLink` Different?
+
+When URL path = `to` prop the its link has an `active` class</br>
+##### This impacts Styling: </br>
+CSS styles can be defined for an .active class name.</br>
+Functions can be passed to className or style to customize styling</br>
+*Example
+
+      <NavLink 
+         to="about" 
+         className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
+      > About </NavLink>
+
+
+
 
 
 
