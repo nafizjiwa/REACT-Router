@@ -15,11 +15,11 @@ Every URL is essentially a request for some resource and each component of the U
 Depending on the application requests coming into a server are handled differently.</br> 
 REACT APPLICATIONS use REACT ROUTER for front end routing solution.</br>
 
-#### Routing in web applications is defining how different URLs correspond to different views or components in an app.
-This allows users navigate between pages without a full page reload, providing seamless.</br>
+### Routing is defining how an app's different URLs correspond to different views or components.
+##### Users can navigate between pages without a full page reload, providing seamless.</br>
 
-#### To use React Router Install it
-Install react-router-dom package</br>
+#### Install React Router to Use It
+##### Install the react-router-dom package</br>
 
       npm install --save react-router-dom@6
 
@@ -32,8 +32,8 @@ Initialize the router. Call createBrowserRouter</br>
       import { createBrowserRouter } from 'react-router-dom';
       const router = createBrowserRouter( /* application routes are defined here */ );
 
-#### Provide a Router 
-Application views, called Routes (React components), need to be rendered.</br>
+### Provide a Router 
+##### Application views, called Routes (React components), need to be rendered.</br>
 First, make router available at the root by importing React Router's `RouterProvider`(1)</br>
 The router determines which routes to render when URL changes</br>
 See below info about the path is passed down as a prop(2)</br>
@@ -47,5 +47,36 @@ See below info about the path is passed down as a prop(2)</br>
       );
     }
 
-#### Once Routing Setup Define Route/views/components to Render
+### Routing 
+##### Setup Now Define Route/views/components to Render for different URL paths
+2 ways to define routes: JSX or objects. Here we use JSX.</br>
+`.createBrowserRouter` accepts an arrya of <Route> objects.</br>
+To configure/define routes with JSX use React Routers method `.createRoutesFromElements`</br>
+First import it.</br>
+
+      import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
+
+#### <Route> decides if a components needs rendering base on it URL path.</br>
+<Route> Includes:
+##### 1. A URL path to render
+##### 2. An ELement prop of the component to render
+
+       import About from './About.js';
+       import { RouterProvider, createBrowserRouter, Route } from 'react-router-dom';
+       const router = createBrowserRouter(createRoutesFromElements(
+              <Route path='/about' element={ <About/> } />
+       ));
+
+      export default function App () {
+        return (
+            <RouterProvider router={ router } />
+        );
+      }
+
+
+To render element with every page mutiple componenets can be nested together.</br>
+
+
+
+
   
