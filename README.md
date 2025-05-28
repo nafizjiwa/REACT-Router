@@ -136,23 +136,24 @@ Functions can be passed to className or style to customize styling</br>
 ***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
 
 ### Dynamic Routes
-Static routes the paths match single paths `/about`</br>
-Dynamic routes the paths match pattern `/about/:someTitle` </br>
-React Router renders a conponent using `URL parameters`</br>
-URL parameters are segments of a URL acting as placeholder and start with a colon`:title`</br>
+Static route paths match single a path `/about`</br>
+Dynamic route paths match pattern `/about/:someTitle` </br>
+React Router renders their components using the `URL parameters`</br>
+URL parameters follow a colon `:NameOfPlacehoder`</br>
 
       const route = createBrowserRouter(createRoutesFromElement(
         <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
       ))
-Here path prop `/articles/:titlePlaceholder` contains URL parameter :titlePlaceholder</br>
+Here path property `/articles/:titlePlaceholder` contains URL parameter :titlePlaceholder</br>
 So when the user navigates to pages similar to `/articles/:titlePlaceholder:`</br>
       /articles/react, or
       /articles/html-or-css
 The <Article> component gets rendered</br>
 
-To add a dynamic route, render the Route component and make sure that its path prop includes a dynamic segment (a segment with a colon).
+To Create a dynamic route, 
+render a Route component with a path prop that includes a dynamic segment `:placeHolder`
 
-      <Route path='path/:param' element={ <MyComponent/> }/>
+      <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 
 
 
