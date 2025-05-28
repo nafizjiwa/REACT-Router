@@ -48,10 +48,13 @@ See below info about the path is passed down as a prop(2)</br>
     }
 
 ### Routing with `<Route>`
-##### Setup Now Define Route/views/components to Render for different URL paths
+#### Now Define Routes to Render for different URL paths
+###### *Routes are also called views or components*
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
-`.createBrowserRouter` accepts an arrya of <Route> objects.</br>
-To configure/define routes with JSX use React Routers method `.createRoutesFromElements`</br>
+To initialize 
+First, `.createRoutesFromElements` converts JSX route elements into route objects </br>
+Second, `.createBrowserRouter` accepts route objects to initalizes and create router objects which is passed into router provider.</br>
+
 First import it.</br>
 
       import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
@@ -89,7 +92,20 @@ First import it.</br>
       ));
 ##### When Navigating to one of the nested routes we Render that view along with all components within <Route>
 
-#### Define Routes: Between `<Root>` and `</Root>` tags Use createBrowserRouter, createRoutesFromELements and Route
+#### Define Routes: Between `Root` Open and Close tags Use createBrowserRouter, createRoutesFromELements and Route
+
+      const router = createBrowserRouter(createRoutesFromElements(
+        <Route path="/" element={ <Root/> }>  {/* root route */}
+          <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
+          <Route path="myotherpath" element={ <MyOtherComponent/> } />  {/* nested route */}
+        </Route>
+      ));
+
+
+
+### Linking to Routes (Navigating within an app between pages )
+
+Navigating within pages of an app pages reload to prevent this React Router offers 2 components or solutions.
 
 
 
