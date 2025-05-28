@@ -149,7 +149,7 @@ So when the user navigates to pages similar to `/articles/:titlePlaceholder:`</b
 
       /articles/react, or
       /articles/html-or-css
-The <Article> component gets rendered</br>
+The `<Article>` component gets rendered</br>
 
 To Create a dynamic route, 
 Render a Route component with a path prop that includes a `dynamic segment` = `:URLParameter or placeHolder`
