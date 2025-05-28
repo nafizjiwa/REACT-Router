@@ -47,7 +47,7 @@ See below info about the path is passed down as a prop(2)</br>
       );
     }
 
-### Routing with <Route>
+### Routing with `<Route>`
 ##### Setup Now Define Route/views/components to Render for different URL paths
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
 `.createBrowserRouter` accepts an arrya of <Route> objects.</br>
