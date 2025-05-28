@@ -109,10 +109,10 @@ Navigating within pages of an app causes pages to reload. </br>
 React Router offers 2 anchors to prevent reloading (anchor's default if refresh page is disabled).
 1. Link
 2. NavLink
+   
 Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redirects to the /about view)
 
      /* First, Components are imported ... */
-   
      import { ..., Link, NavLink } from 'react-router-dom';
      <Link to="/about">About</Link> (to = href)
      <NavLink to="/about">About</NavLink>
