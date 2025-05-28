@@ -32,7 +32,8 @@ Initialize the router. Call createBrowserRouter</br>
       import { createBrowserRouter } from 'react-router-dom';
       const router = createBrowserRouter( /* application routes are defined here */ );
 
-#### Different views of an application are called Routes (or React components) which need to be rendered.
+#### Provide a Router 
+Application views, called Routes (React components), need to be rendered.</br>
 First, make router available at the root by importing React Router's `RouterProvider`(1)</br>
 The router determines which routes to render when URL changes</br>
 See below info about the path is passed down as a prop(2)</br>
@@ -46,5 +47,5 @@ See below info about the path is passed down as a prop(2)</br>
       );
     }
 
-#### Define Route components
+#### Once Routing Setup Define Route/views/components to Render
   
