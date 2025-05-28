@@ -122,7 +122,7 @@ Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redi
 
      <NavLink to="path">Click Me</NavLink>
 
-When URL path = `to` prop its link has an `active` class</br>
+When URL path = `to` prop the `.active` style class is added to the link</br>
 ##### This impacts Styling: </br>
 CSS styles can be defined for an .active class name.</br>
 Functions can be passed to className or style to customize styling</br>
@@ -133,7 +133,27 @@ Functions can be passed to className or style to customize styling</br>
       className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
     > About </NavLink>
 
-***Here a function is passed to className prop which applies a class dependent on if NavLink is active or not active.
+***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
+
+### Dynamic Routes
+Static routes the paths match single paths `/about`</br>
+Dynamic routes the paths match pattern `/about/:someTitle` </br>
+React Router renders a conponent using `URL parameters`</br>
+URL parameters are segments of a URL acting as placeholder and start with a colon`:title`</br>
+
+      const route = createBrowserRouter(createRoutesFromElement(
+        <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
+      ))
+Here path prop `/articles/:titlePlaceholder` contains URL parameter :titlePlaceholder</br>
+So when the user navigates to pages similar to `/articles/:titlePlaceholder:`</br>
+      /articles/react, or
+      /articles/html-or-css
+The <Article> component gets rendered</br>
+
+To add a dynamic route, render the Route component and make sure that its path prop includes a dynamic segment (a segment with a colon).
+
+      <Route path='path/:param' element={ <MyComponent/> }/>
+
 
 
 
