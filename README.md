@@ -126,10 +126,10 @@ CSS styles can be defined for an .active class name.</br>
 Functions can be passed to className or style to customize styling</br>
 *Example
 
-   <NavLink 
-     to="about" 
-     className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
-   > About </NavLink>
+    <NavLink 
+      to="about" 
+      className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
+    > About </NavLink>
 
 
 
