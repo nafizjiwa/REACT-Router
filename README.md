@@ -92,7 +92,7 @@ First import it.</br>
       ));
 ##### When Navigating to one of the nested routes we Render that view along with all components within <Route>
 
-#### Define Routes: Between `Root` Open and Close tags Use createBrowserRouter, createRoutesFromELements and Route
+#### Example of Defining Routes: Between `Root`'s Open and Close tags Use createBrowserRouter, createRoutesFromELements and Roote's <Route>
 
       const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={ <Root/> }>  {/* root route */}
@@ -105,10 +105,17 @@ First import it.</br>
 
 ### Linking to Routes (Navigating within an app between pages )
 
-Navigating within pages of an app pages reload to prevent this React Router offers 2 components or solutions.
+Navigating within pages of an app causes pages to reload. </br>
+So to prevent this React Router offers 2 anchors (whose default of page refresh are disabled).
+1. Link
+2. NavLink
+Anchor Tag Syntax: A `to` prop (the redirect) and wrapped HTML for display (Here both redirect to /about view)
 
+      <Link to="/about">About</Link>
+      <NavLink to="/about">About</NavLink>
 
-
+`/` refers to ablsolute paths meaning it navigates from the root directory.
+First, import these components
 
 
 
