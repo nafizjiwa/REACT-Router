@@ -60,6 +60,9 @@ First import it.</br>
 <Route> Includes:
 ###### 1. A URL path to render
 ###### 2. An ELement prop of the component to render
+`.createRoutesFromElements` 
+      - configures <Route> to render a <PATH> component when the URL matches its path `/about`
+      -Here render <About> when URL matches `/about`
 
        import About from './About.js';
        import { RouterProvider, createBrowserRouter, Route } from 'react-router-dom';
@@ -74,7 +77,9 @@ First import it.</br>
       }
 
 
-##### To render mutilple elements with every page componenets can be nested together.</br>
+##### For components which render with every page view
+   `1st Define a root-level component`
+   `2nd then nest all other routes within the root-level component.`</br>
 
       /* imports ... */
       const router = createBrowserRouter(createRoutesFromElements(
@@ -82,7 +87,9 @@ First import it.</br>
           // nested routes here will render along with this <Root/> component
         </Route>
       ));
-##### Navigating to one of the nested routes. That view will render along with any elements we’ve defined in our <Root/> component
+##### When Navigating to one of the nested routes that view will render along with any elements that are defined in the <Root/> component
+
+####
 
 
 
