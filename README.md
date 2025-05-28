@@ -103,10 +103,10 @@ First import it.</br>
 
 
 
-### Linking to Routes (Navigating within an app between pages )
+### Linking to Routes (Navigating within an app's pages )
 
-Navigating within pages of an app causes pages to reload. </br>
-React Router offers 2 anchors to prevent reloading (anchor's default if refresh page is disabled).
+Navigating between pages of an app causes pages to reload. </br>
+React Router offers 2 anchors to prevent reloading (anchor's default of refresh page is disabled).
 1. Link
 2. NavLink
    
@@ -130,6 +130,8 @@ Functions can be passed to className or style to customize styling</br>
       to="about" 
       className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
     > About </NavLink>
+
+***Here a function is passed to className prop which applies a class dependent on if NavLink is active or not active.
 
 
 
