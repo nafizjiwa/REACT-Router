@@ -146,6 +146,7 @@ URL parameters follow a colon `:NameOfPlacehoder`</br>
       ))
 Here path property `/articles/:titlePlaceholder` contains URL parameter :titlePlaceholder</br>
 So when the user navigates to pages similar to `/articles/:titlePlaceholder:`</br>
+
       /articles/react, or
       /articles/html-or-css
 The <Article> component gets rendered</br>
