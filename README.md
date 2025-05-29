@@ -156,6 +156,27 @@ Render a Route component with a path prop that includes a `dynamic segment` = `:
 
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 
+#### To Render Dynamic routes the Value of URL Parameters is needed to display the component
+The useParam() hook can access this value 
+--> returns an object with URL Parameters names to values
+
+      --> When a user visits /articles/objects Article is rendered.
+      import { Link, useParams } from 'react-router-dom';
+
+      export default function Article() {
+  
+        let { title } = useParams();
+        // title will be equal to the string 'objects' returned by useParams
+         // Destructuring extracts the value of URL param storing in title
+         // The title will be rendered/displayed in the <h1>
+        return (
+          <article>
+            <h1>{title}</h1>
+          </article>
+       );
+      }
+
+
 
 
 
