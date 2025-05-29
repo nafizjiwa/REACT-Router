@@ -240,6 +240,12 @@ The funciton navigate(insert integer here) allows positve integers for forward a
           </button>
         )
       }
+### `QUERY PARAMETERS`
+Syntax: In URL --> `?parameterName=value`.
+React Router gets query parameters with the useSearchParams() hook
+The hook --> returns URLSearchParams object and a update function.
+
+
 
 
 
