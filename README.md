@@ -183,7 +183,8 @@ The child Route path is relative to the parent Route's path.
       /* imports ... */
       const router = createBrowserRouter(createRoutesFromElement(
         <Route path='/about' element={ <About/> }> {/* About renders if path starts with /about */}
-              <Route path='secret' element={ <Secret/> }>  />  {/* we can exclude /about from this path since it is relative to its parent */}
+              <Route path='secret' element={ <Secret/> }>  />  
+              {/* we can exclude /about from this path since it is relative to its parent */}
         </Route> 
       ));
 
