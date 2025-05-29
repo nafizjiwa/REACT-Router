@@ -47,7 +47,7 @@ See below info about the path is passed down as a prop(2)</br>
       );
     }
 
-### Routing with `<Route>`
+### ROUTING WITH `<Route>`
 #### Now Define Routes to Render for different URL paths
 ###### *Routes are also called views or components*
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
@@ -103,7 +103,7 @@ First import it.</br>
 
 
 
-### Linking to Routes (Navigating within an app's pages )
+### LINKING TO ROUTES (Navigating within an app's pages )
 
 Navigating between pages of an app causes pages to reload. </br>
 React Router offers 2 anchors to prevent reloading (anchor's default of refresh page is disabled).
@@ -135,7 +135,7 @@ Functions can be passed to className or style to customize styling</br>
 
 ***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
 
-### Dynamic Routes
+### DYNAMIC ROUTES
 Static route paths match single a path `/about`</br>
 Dynamic route paths match pattern `/about/:someTitle` </br>
 React Router renders their components using the `URL parameters`</br>
@@ -175,6 +175,18 @@ The useParam() hook can access this value
           </article>
        );
       }
+### NESTED ROUTES
+
+A route (Child) within a route (Parent).
+The child Route path is relative to the parent Route's path.
+
+      /* imports ... */
+      const router = createBrowserRouter(createRoutesFromElement(
+        <Route path='/about' element={ <About/> }> {/* About renders if path starts with /about */}
+              <Route path='secret' element={ <Secret/> }>  />  {/* we can exclude /about from this path since it is relative to its parent */}
+        </Route> 
+      ));
+
 
 
 
