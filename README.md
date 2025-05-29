@@ -245,11 +245,31 @@ Syntax: In URL --> `?parameterName=value`.</br>
 useSearchParams() hook is used to access query parameters of a path or alter the path</br>
 SInce a hook --> returns object and a function. `[ searchParams. setSearchParams ] = useSearchParams()`;</br>
 const sortOrder = searchParams.get('query parameter to search'); queryParams object has a get method which retrieves the query parameters value.</br>
-So site we want to Visit: `"/list?order=DESC"`</br>
+##### So site we want to Visit: `"/list?order=DESC"`</br>
 To get a query parameters value use searchParams: `const sortOrder = searchParams.get('order')`</br>
 To update a query parameter use setSearchParams: onClick = {
 () => setSearchParams( { order: 'ASC'} )}</br>
 When clicked the the component is rendered and search parmameter updated to 'ASC'</br>
+##### Navigate to Different site  `"/list?order=ASC"`
+
+      import { useNavigate, createSearchParams } from 'react-router-dom';
+      // get navigate function
+      const navigate = useNavigate();
+
+      //1. define an object where the key is is the query parameter name and value is query parameter value
+      const searchQueryParams = {
+        order: 'ASC'
+      }
+
+      // use createSearchParams which takes an object and transforms it to a query string of the form order=ASC
+      const searchQueryString = createSearchParams(searchQueryParams);
+
+      // force a navigate by passing in an object with pathname indicating that path to navigate and search indicating the query parameters to append
+      navigate({
+        pathname:'/list',
+        search: `?${searchQueryString}`
+      })
+
 
 
 
