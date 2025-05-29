@@ -192,8 +192,7 @@ When the path matches /about the `<About >` component is rendered</br>
 When the path matches /about/secret the `<Secret >` and `<About >` components are rendered.
 
 ### `<Navigate>` (or Redirect)
-Navigate component is for declarative redirecting.</br>
-Unlike Link and NavLink it doesn't need to be clicked.</bre>
+Unlike <Link> or <NavLink>, which require user interaction, <Navigate> automatically redirects users when certain conditions are met.</br>
 Navigate redirects the user to the location specified by it's `to` prop.
 
       import { Navigate } from 'react-router-dom';
