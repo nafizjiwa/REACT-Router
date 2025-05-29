@@ -241,9 +241,15 @@ The funciton navigate(insert integer here) allows positve integers for forward a
         )
       }
 ### `QUERY PARAMETERS`
-Syntax: In URL --> `?parameterName=value`.
-React Router gets query parameters with the useSearchParams() hook
-The hook --> returns URLSearchParams object and a update function.
+Syntax: In URL --> `?parameterName=value`.</br>
+useSearchParams() hook is used to access query parameters of a path or alter the path</br>
+SInce a hook --> returns object and a function. `[ searchParams. setSearchParams ] = useSearchParams()`;</br>
+const sortOrder = searchParams.get('query parameter to search'); queryParams object has a get method which retrieves the query parameters value.</br>
+So site we want to Visit: `"/list?order=DESC"`</br>
+To get a query parameters value use searchParams: `const sortOrder = searchParams.get('order')`</br>
+To update a query parameter use setSearchParams: onClick = {
+() => setSearchParams( { order: 'ASC'} )}</br>
+When clicked the the component is rendered and search parmameter updated to 'ASC'</br>
 
 
 
