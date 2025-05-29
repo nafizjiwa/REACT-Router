@@ -188,7 +188,10 @@ The child Route path is relative to the parent Route's path.
         </Route> 
       ));
 
+When the path matches /about the <About > component render
+When the path matches /about/secret the <Secret > and <About > component will render
 
+### <Navigate>
 
 
 
