@@ -211,8 +211,39 @@ All are declarative redirections.</br>
 
 ### `useNavigate()`
 useNavigate hook updates the browswer location imperatively by returning a navigate function.</br>
-It triggers a redirect and the ability to navigate through the history stack.</br>
+#### Triggers a redirect
+      import { useNavigate } from `react-router-dom`;
+
+      export const ExampleForm = () => {
+
+        const navigate = useNavigate()
+
+        const handleSubmit = e => {
+          e.preventDefault();
+          navigate('/')
+        }
+
+        return (
+          <form onSubmit={handleSubmit}>
+            {/* form elements */ }
+          </form>
+        )
+      }
+##### Navigate through history stack with a back button
 useNavigate(insert integer here) allows positve integers forward and negative backward in history</br>
+
+      import { useNavigate } from `react-router-dom`
+
+      export const BackButton = () => {
+        const navigate = useNavigate()
+
+        return (
+          <button onClick={() => navigate(-1)}>
+            Go Back
+          </button>
+        )
+      }
+
 
 
 
