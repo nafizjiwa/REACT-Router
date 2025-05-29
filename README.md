@@ -1,5 +1,5 @@
-# REACT-Router
-
+# REACT-ROUTER
+#### For front-end or client side routing.
 ![image](https://github.com/user-attachments/assets/35ed8189-c85e-4486-add6-e48e3b5903c0)
 
 
@@ -23,7 +23,7 @@ REACT APPLICATIONS use REACT ROUTER for front end routing solution.</br>
 
       npm install --save react-router-dom@6
 
-Add routing to a project by importing a common router such as `createBrowserRouter`</br>
+Create a router with `createBrowserRouter`</br>
 
       import { createBrowserRouter } from 'react-router-dom';
 
