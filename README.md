@@ -118,19 +118,22 @@ Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redi
      <NavLink to="/about">About</NavLink>
 
 `/` refers to ablsolute paths meaning it navigates from the root directory.
+
 #### How is `NavLink` Different?
 
      <NavLink to="path">Click Me</NavLink>
 
-When URL path = `to` prop the `.active` style class is added to the link</br>
+When property `to`= URL path the link has an `.active` style class added to it.</br>
+
 ##### This impacts Styling: </br>
-CSS styles can be defined for an .active class name.</br>
-Functions can be passed to className or style to customize styling</br>
+We can define CSS styles for this .active class name to highlight the viewed content.</br>
+Functions can be passed to className or style to customize styling of the NavLink</br>
 *Example
 
     <NavLink 
       to="about" 
       className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
+      //Different styling applied when active 'activeNavLink class' or not active
     > About </NavLink>
 
 ***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
