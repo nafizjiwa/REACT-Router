@@ -262,13 +262,14 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
       }
       // use createSearchParams which takes an object and transforms it to a query string of the form order=ASC
       const searchQueryString = createSearchParams(searchQueryParams);
-      // kcall navigate by passing in an object with pathname indicating that path to navigate and search indicating the query parameters to append to path
+      //call navigate: 
+      //pass in an object with
+            //1. Pathname indicating that path to navigate & 2. Search indicating the query parameters to append to path
       navigate({
         pathname:'/list',
         search: `?${searchQueryString}`
       })
 
-NOTES:
 
 
 
