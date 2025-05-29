@@ -210,33 +210,30 @@ All are declarative redirections.</br>
 ##### The UserProfile component renders if loggedIn prop is false Navigate is returned and then rendered sending user to `/` page.</br>
 
 ### `useNavigate()`
-useNavigate hook updates the browswer location imperatively by returning a navigate function.</br>
-#### Triggers a redirect
+This hook updates the browswer location imperatively by returning a navigate function.</br>
+`const navigate = useNavigate();`</br>
+#### To trigger a redirect
       import { useNavigate } from `react-router-dom`;
 
       export const ExampleForm = () => {
-
         const navigate = useNavigate()
-
         const handleSubmit = e => {
           e.preventDefault();
           navigate('/')
         }
-
         return (
           <form onSubmit={handleSubmit}>
             {/* form elements */ }
           </form>
         )
       }
-##### Navigate through history stack with a back button
-useNavigate(insert integer here) allows positve integers forward and negative backward in history</br>
+#### Navigate through history stack with a back button
+The funciton navigate(insert integer here) allows positve integers for forward and negative for backward in history</br>
 
       import { useNavigate } from `react-router-dom`
 
       export const BackButton = () => {
         const navigate = useNavigate()
-
         return (
           <button onClick={() => navigate(-1)}>
             Go Back
