@@ -15,7 +15,7 @@ Every URL is essentially a request for some resource and each component of the U
 Depending on the application requests coming into a server are handled differently.</br> 
 REACT APPLICATIONS use REACT ROUTER for front end routing solution.</br>
 
-##*Routing is defining how an app's different URLs correspond to different views or components.
+## Routing is defining how an app's different URLs correspond to different views or components.
 ##### Users can navigate between pages without a full page reload, providing seamless.</br>
 
 #### Install React Router to Use It
