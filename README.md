@@ -32,14 +32,16 @@ Initialize the router. Call createBrowserRouter</br>
       import { createBrowserRouter } from 'react-router-dom';
       const router = createBrowserRouter( /* application routes are defined here */ );
 
+
 ### Provide a Router 
 ##### Application views, called Routes (React components), need to be rendered.</br>
-First, make router available at the root by importing React Router's `RouterProvider`(1)</br>
-The router determines which routes to render when URL changes</br>
+First, make router available to the app by importing React Router's `RouterProvider`(1)</br>
+The router determines which routes to render at differen URL's</br>
 See below info about the path is passed down as a prop(2)</br>
 
     import { RouterProvider (1), createBrowserRouter } from 'react-router-dom';
-    const router = createBrowserRouter( /* application routes are defined here */ );
+    const router = createBrowserRouter( 
+                /* application routes are defined here */ );
 
     export default function App () {
       return (
@@ -80,7 +82,7 @@ First import it.</br>
       }
 
 
-##### For components which render with every page view
+##### For components that need to render with every page view
    `1st Define a root-level component`
    `2nd then nest all other routes within the root-level component.`</br>
 
@@ -100,8 +102,6 @@ First import it.</br>
           <Route path="myotherpath" element={ <MyOtherComponent/> } />  {/* nested route */}
         </Route>
       ));
-
-
 
 ### LINKING TO ROUTES (Navigating within an app's pages )
 
@@ -275,8 +275,9 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 
 
 
-
-
+For App to communicate with React Router import React Router's RouteProvider</br>
+Then provide it at root level one with a constant appRouter and in the return statement of </br>App as <RouteProvider /> which contains an attribute router with a value of appRouter</br>
+Routes will be in JSX but React RouterProvider ono accepts route objects so we use </br>createRoutesFromElements and createBrowserRouter to convert the JSX object ot route objects.</br>
 
 
 
