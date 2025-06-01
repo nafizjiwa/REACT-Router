@@ -275,17 +275,18 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 
 
 TO CREATE ROUTES
-1. SETUP REACT ROUTE
+1. SETUP REACT ROUTES
       install react router --> npm install --save react-router-dom@6
-      If in dependency list
-      Import React Router's RouterProvider
-      Use React Router --> <RouterProvider router= {routes here}
+      Check, If installed shows in dependency list
+      Import React Router's RouterProvider to communicate with application
+      import { RouterProvider } = from 'react-router-dom';
+      Use React Router in App return statement --> <RouterProvider router= {routes here}
+      The value of the attribute router equals the routes stored in a constant which is a            JSX object. const nameOfConstant = { JSX Ojbect }
       
-      
-3. 
-For App to communicate with React Router import React Router's RouteProvider</br>
-Then provide it at root level one with a constant appRouter and in the return statement of </br>App as <RouteProvider /> which contains an attribute router with a value of appRouter</br>
-Routes will be in JSX but React RouterProvider ono accepts route objects so we use </br>createRoutesFromElements and createBrowserRouter to convert the JSX object ot route objects.</br>
+2.CREATE ROUTES
+      React Router functions and components convert JSX Objects to route objects
+      RouteProvider, createRoutesFromElements, createBrowserRouter, Route
+      FIRST, initialize variable used in 
 To display content regardless of the path we need a "root" route to the path "/" which renders the Root component stored in the variable.
 Routes or route elements are created by using React Router's Route component
 RouterProvider(routeObject)
