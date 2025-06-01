@@ -274,7 +274,15 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
       })
 
 
-
+TO CREATE ROUTES
+1. SETUP REACT ROUTE
+      install react router --> npm install --save react-router-dom@6
+      If in dependency list
+      Import React Router's RouterProvider
+      Use React Router --> <RouterProvider router= {routes here}
+      
+      
+3. 
 For App to communicate with React Router import React Router's RouteProvider</br>
 Then provide it at root level one with a constant appRouter and in the return statement of </br>App as <RouteProvider /> which contains an attribute router with a value of appRouter</br>
 Routes will be in JSX but React RouterProvider ono accepts route objects so we use </br>createRoutesFromElements and createBrowserRouter to convert the JSX object ot route objects.</br>
