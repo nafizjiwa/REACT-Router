@@ -278,7 +278,11 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 For App to communicate with React Router import React Router's RouteProvider</br>
 Then provide it at root level one with a constant appRouter and in the return statement of </br>App as <RouteProvider /> which contains an attribute router with a value of appRouter</br>
 Routes will be in JSX but React RouterProvider ono accepts route objects so we use </br>createRoutesFromElements and createBrowserRouter to convert the JSX object ot route objects.</br>
-To display content regardless of the route we need a "root" route 
+To display content regardless of the path we need a "root" route to the path "/" which renders the Root component stored in the variable.
+Routes or route elements are created by using React Router's Route component
+RouterProvider(routeObject)
+input Route component into createRoutesFromElement(RouteComponent/Element)==>routeObject
+then input routeObject into RouterProvider+
 
 
 
