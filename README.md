@@ -295,22 +295,22 @@ TO CREATE ROUTES:
       Initialize a Route called ==> const routeElement = <Route path='/somepath' element{<MyComponent />} />
       Route element can't be inputed in RouterProvider(need a route object).
    
-      First creaate Route object use createRoutesFromElements(routeElement) --> route object
-            const routes = createRoutesFromElements(<Route path='/somepath' element={<MyComponent />} />)
-      Second create a router, the route object from createRoutesFromElements input into createBrowserRouter
-            const router = createBrowserRouter(
-                     createRoutesFromElements(<Route path="/somepath" element={ <MyComponent /> }/>) );
+            First creaate Route object use createRoutesFromElements(routeElement) --> route object
+                  const routes = createRoutesFromElements(<Route path='/somepath' element={<MyComponent />} />)
+            Second create a router, the route object from createRoutesFromElements input into createBrowserRouter
+                  const router = createBrowserRouter(
+                           createRoutesFromElements(<Route path="/somepath" element={ <MyComponent /> }/>) );
 
 3. CREATE AN INDEX ROUTE OR NESTED ROUTES   
    The Root Route '/' contains content for layouts where certain elements remain consistent across different subpages a user visits.
    An Index Route uses its parents' (or root route) path to render
    
-     const router = createBrowserRouter(createRoutesFromElements(
-        <Route path='/' element={ <Root/> }>       {/* root route or parent */}
-          // nested routes here will render along with this <Root/> component
-               eg. <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
-        </Route>
-      ));
+           const router = createBrowserRouter(createRoutesFromElements(
+              <Route path='/' element={ <Root/> }>       {/* root route or parent */}
+                // nested routes here will render along with this <Root/> component
+                     eg. <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
+              </Route>
+            ));
    
 5. RENDER NESTED ROUTE
    To render nested routes the parent must be told where to render the nested element
