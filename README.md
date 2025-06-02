@@ -275,15 +275,16 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 
 
 TO CREATE ROUTES
-1. SETUP REACT ROUTES
-      install react router --> npm install --save react-router-dom@6
-      Check, If installed shows in dependency list
-      Import React Router's RouterProvider to communicate with application
-      import { RouterProvider } = from 'react-router-dom';
-      Use React Router in App return statement --> <RouterProvider router= {routes here}
-      The value of the attribute router equals the routes stored in a constant which is a            JSX object. const nameOfConstant = { JSX Ojbect }
+1. SETUP REACT ROUTES</br>
+      install react router --> npm install --save react-router-dom@6</br>
+      Check, If installed shows in dependency list</br>
+      Import React Router's RouterProvider to communicate with application</br>
+      import { RouterProvider } = from 'react-router-dom';</br>
+      Use React Router in App return statement --> <RouterProvider router= {routes here}</br>
+      The value of the attribute router equals the routes stored in a constant which is a</br>
+      JSX object. const nameOfConstant = { JSX Ojbect }</br>
       
-2.CREATE ROUTES
+2. CREATE ROUTES
       React Router functions and components convert JSX Objects to route objects
       RouteProvider, createRoutesFromElements, createBrowserRouter, Route
       FIRST, initialize variable where routes are stored.
