@@ -286,12 +286,20 @@ TO CREATE ROUTES
 2.CREATE ROUTES
       React Router functions and components convert JSX Objects to route objects
       RouteProvider, createRoutesFromElements, createBrowserRouter, Route
-      FIRST, initialize variable used in 
-To display content regardless of the path we need a "root" route to the path "/" which renders the Root component stored in the variable.
-Routes or route elements are created by using React Router's Route component
-RouterProvider(routeObject)
-input Route component into createRoutesFromElement(RouteComponent/Element)==>routeObject
-then input routeObject into RouterProvider+
+      FIRST, initialize variable where routes are stored.
+      For content on a page like nav bars which are always displayed regardless of the
+      path the user is on we need a "root" route to the path "/" which renders the element 
+      Root component.
+      Create Route ==> const routeElement = <Route path='/somepath' element{<MyComponent />} />
+      Route element can't be inputed in RouterProvider(routeObject) we need a route object.
+      To create Route object: 
+      First use createRoutesFromElements(routeElement) --> route object
+            const routes = createRoutesFromElements(<Route path='/somepath' element={<MyComponent />} />)
+      Second to initialize a router wrap createRoutesFromElements with createBrowserRouter
+            const router = createBrowserRouter(createRoutesFromElements(<Route path="/somepath" 
+                                        element={ <MyComponent /> }/> ));
+
+
 
 
 
