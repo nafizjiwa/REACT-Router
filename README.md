@@ -274,39 +274,58 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
       })
 
 
-TO CREATE ROUTES
+TO CREATE ROUTES:
+
 1. SETUP REACT ROUTES</br>
       install react router --> npm install --save react-router-dom@6</br>
       Check, If installed shows in dependency list</br>
       Import React Router's RouterProvider to communicate with application</br>
       import { RouterProvider } = from 'react-router-dom';</br>
       Use React Router in App return statement --> <RouterProvider router= {routes here}</br>
-      The value of the attribute router equals the routes stored in a constant which is a</br>
-      JSX object. const nameOfConstant = { JSX Ojbect }</br>
+      The value of the attribute router equals the routes stored in a constant which is a JSX object.</br>
+      const nameOfConstant = { JSX Ojbect }</br>
       
 2. CREATE ROUTES
       React Router functions and components convert JSX Objects to route objects
-      RouteProvider, createRoutesFromElements, createBrowserRouter, Route
+            `RouteProvider, createRoutesFromElements, createBrowserRouter, Route`
       FIRST, initialize variable where routes are stored.
       For content on a page like nav bars which are always displayed regardless of the
       path the user is on we need a "root" route to the path "/" which renders the element 
       Root component.
-      Create Route ==> const routeElement = <Route path='/somepath' element{<MyComponent />} />
-      Route element can't be inputed in RouterProvider(routeObject) we need a route object.
-      To create Route object: 
-      First use createRoutesFromElements(routeElement) --> route object
+      Initialize a Route called ==> const routeElement = <Route path='/somepath' element{<MyComponent />} />
+      Route element can't be inputed in RouterProvider(need a route object).
+   
+      First creaate Route object use createRoutesFromElements(routeElement) --> route object
             const routes = createRoutesFromElements(<Route path='/somepath' element={<MyComponent />} />)
-      Second to initialize a router wrap createRoutesFromElements with createBrowserRouter
-            const router = createBrowserRouter(createRoutesFromElements(<Route path="/somepath" 
-                                        element={ <MyComponent /> }/> ));
+      Second create a router, the route object from createRoutesFromElements input into createBrowserRouter
+            const router = createBrowserRouter(
+                     createRoutesFromElements(<Route path="/somepath" element={ <MyComponent /> }/>) );
 
-
-
-
-
-
-
-
+3. CREATE AN INDEX ROUTE OR NESTED ROUTES   
+   The Root Route '/' contains content for layouts where certain elements remain consistent across different subpages a user visits.
+   An Index Route uses its parents' (or root route) path to render
+   
+     const router = createBrowserRouter(createRoutesFromElements(
+        <Route path='/' element={ <Root/> }>       {/* root route or parent */}
+          // nested routes here will render along with this <Root/> component
+               eg. <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
+        </Route>
+      ));
+   
+5. RENDER NESTED ROUTE
+   To render nested routes the parent must be told where to render the nested element
+   FIRST, IMPORT  Outlet from react-router-dom
+   SECOND, Use Outlet in parent route to indicate where child route is rendered
+   
+6. URL PARAMETERS IN REACT COMPONENTS
+         Add URL parameters to a Route path with a colon `:` this is a dynamic path
+   
+         <Route path='/' element={ <MyComponent/> }>
+              <Route path=':myType' element={ <MyTypedComponent /> }/>
+                     {/* this nested route has a dynamic path which*/}
+                     {/* Renders with paths like `/type1` or `/type2` */}
+         </Route>
+7. 
 
 
 
