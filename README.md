@@ -256,22 +256,25 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 ##### Navigate to Different site  `"/list?order=ASC"`
 
       import { useNavigate, createSearchParams } from 'react-router-dom';
-      // get navigate function
+            // get navigate function
       const navigate = useNavigate();
 
-      //Define an object where the key is is the query parameter name and value is query parameter value
+      //Define an object:
       const searchQueryParams = {
         order: 'ASC'
+        The object is a key: value pair
+        Query Parameter Name: Query Parameter "Value"
       }
-      // use createSearchParams which takes an object and transforms it to a query string of the form order=ASC
+      // use createSearchParams it akes an object --> transforms to query string (form order=ASC)
       const searchQueryString = createSearchParams(searchQueryParams);
-      //call navigate: 
-      //pass in an object with
-            //1. Pathname indicating that path to navigate & 2. Search indicating the query parameters to append to path
-      navigate({
-        pathname:'/list',
-        search: `?${searchQueryString}`
-      })
+      //Then call navigate: 
+      //Pass in object with
+            //1. Pathname: which path to navigate AND
+            //2. Search:  the query parameters to append to path 
+                  navigate({
+                    pathname:'/list',
+                    search: `?${searchQueryString}`
+                  })
 
 
 TO CREATE ROUTES:
@@ -325,7 +328,14 @@ TO CREATE ROUTES:
                      {/* this nested route has a dynamic path which*/}
                      {/* Renders with paths like `/type1` or `/type2` */}
          </Route>
-7. 
+   To get the value of a URL parameter `:param` call useParam() ==> object</br>
+   Destructure object for param property:
+         `const { param } = useParams()`
+   Syntax destructuring for URL parameters for a dynamic path eg. /:foo/:bar from the object returned by a call to useParams()
+         `const { foo, bar } = useParams()`
+
+         
+8. 
 
 
 
