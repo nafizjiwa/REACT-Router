@@ -335,26 +335,36 @@ TO CREATE ROUTES:
          `<Route path='/path/:for/:route' element={ <SomeComponent /> } />`</br>
    Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`</br>
-
-   To add a query parameter to the URL after a user enters a new search query in a search bar.</br>
-   Imperatively use useNavigation hook.</br>
+         
+7. SEARCH BAR FEATURES
+   Add React Router to a search bar</br>
+   NOTE QUERY PARAMETER AFTER ? ** URL --> `.../search?name=fido`      QUERY PARAMETER --> ?name=fido
+   User enters a query in search bar that parameter is added to the URL -> then user is redirected to pages of that query</br>
+   To update the URL when user enters the query ---> use useNavigation hook Imperatively.</br>
+   First, Call useNavigation() in Component:</br>
    
-         Call useNavigation() in the Search Component
          const Component = () => {
               const navFunction = useNavigate();
               //...
             }
-
-    To transform a query object into a URLSearchParams object use createSearchparams().</br>
+    Second, transform query object ==> URLSearchParams object use createSearchparams().</br>
     
           const searchQ = {
                sort: 'ASC'
           }
-         const urlQuery = createSearchParams(searchQ);  // will create a query that looks like sort=ASC
+         const urlQuery = createSearchParams(searchQ);
+                     // will create a query that looks like sort=ASC
+    Third, Use the Navigation function to redirect user to path `/search?searchName=searchValue`</br>
 
-8. 
+          navigate({
+              pathname: '/somepath',
+              search: `?${searchQuery}`  // notice you'll need the leading `?`
+            });
+    Fourth, Component is rendered when text entered into search bar --> redirect to path `/search?searchName=searchValue`</br>
+         NOTE* query parameter is not part of path</br>
 
-
+          A Search component added to Root Route path which matches `/search`
+          <Route path='/search' element={ <SearchComponent/> } />
 
 
 
