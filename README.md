@@ -329,22 +329,24 @@ TO CREATE ROUTES:
                      {/* Renders with paths like `/type1` or `/type2` */}
          </Route>
    To get the value of a URL parameter `:param` call useParam() ==> object</br>
-   Destructure object for param property:
-         `const { param } = useParams()`
-   Syntax for a Route that renders a component with multiple URL parameters
-         `<Route path='/path/:for/:route' element={ <SomeComponent /> } />`
-   Syntax destructuring for URL parameters with a dynamic path eg. /:foo/:bar from the object returned by a call to useParams()
-         `const { foo, bar } = useParams()`
+   Destructure object for param property:</br>
+         `const { param } = useParams()`</br>
+   Syntax for a Route that renders a component with multiple URL parameters</br>
+         `<Route path='/path/:for/:route' element={ <SomeComponent /> } />`</br>
+   Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
+         `const { foo, bar } = useParams()`</br>
 
    To add a query parameter to the URL after a user enters a new search query in a search bar.</br>
-   Imperatively use useNavigation hook.
+   Imperatively use useNavigation hook.</br>
+   
          Call useNavigation() in the Search Component
          const Component = () => {
               const navFunction = useNavigate();
               //...
             }
 
-    To transform a query object into a URLSearchParams object use createSearchparams().
+    To transform a query object into a URLSearchParams object use createSearchparams().</br>
+    
           const searchQ = {
                sort: 'ASC'
           }
