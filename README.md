@@ -336,14 +336,20 @@ TO CREATE ROUTES:
    Syntax destructuring for URL parameters with a dynamic path eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`
 
-   To transform a query object into a URLSearchParams object use createSearchparams().
-   import { createSearchParams} from 'react-router-dom';
-   const searchQ = {
-        sort: 'ASC'
-   }
-      const urlQuery = createSearchParams(searchQ);  // will create a query that looks like sort=ASC
+   To add a query parameter to the URL after a user enters a new search query in a search bar.</br>
+   Imperatively use useNavigation hook.
+         Call useNavigation() in the Search Component
+         const Component = () => {
+              const navFunction = useNavigate();
+              //...
+            }
 
-         
+    To transform a query object into a URLSearchParams object use createSearchparams().
+          const searchQ = {
+               sort: 'ASC'
+          }
+         const urlQuery = createSearchParams(searchQ);  // will create a query that looks like sort=ASC
+
 8. 
 
 
