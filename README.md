@@ -354,18 +354,23 @@ TO CREATE ROUTES:
           }
          const urlQuery = createSearchParams(searchQ);
                      // will create a query that looks like sort=ASC
-    Third, Use the Navigation function to redirect user to path `/search?searchName=searchValue`</br>
+    Third, Use the Navigation function to redirect user to path `/search?keyName=searchValue`</br>
 
-          navigate({
-              pathname: '/somepath',
-              search: `?${searchQuery}`  // notice you'll need the leading `?`
-            });
-    Fourth, Component is rendered when text entered into search bar --> redirect to path `/search?searchName=searchValue`</br>
+         navigate({
+             pathname: '/somepath',
+             search: `?${searchQuery}`  // notice you'll need the leading `?`
+           });
+    Fourth, Component is rendered when text entered into search bar --> redirect to path `/search?keyName=searchValue`</br>
          NOTE* query parameter is not part of path</br>
 
-          A Search component added to Root Route path which matches `/search`
-          <Route path='/search' element={ <SearchComponent/> } />
+         A component added to Root Route which matches path `/search`
+         <Route path='/search' element={ <SearchComponent/> } />
 
+      To render the matching user search query get the search parameter value from ?keyName=searchValue</br>
+         call useSearchParams() hook and destructure searchParam property it returns
 
+         const [ searchParamPropertyValue ] = useSearchParams()
 
+      Finally use searchParams get method to retrieve the ‘name’ query parameter and replace the value of petNameToFind with it.
   
+         const searchParamValue = searchParams.get('nameOfProperty')
