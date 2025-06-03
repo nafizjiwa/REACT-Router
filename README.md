@@ -331,8 +331,17 @@ TO CREATE ROUTES:
    To get the value of a URL parameter `:param` call useParam() ==> object</br>
    Destructure object for param property:
          `const { param } = useParams()`
-   Syntax destructuring for URL parameters for a dynamic path eg. /:foo/:bar from the object returned by a call to useParams()
+   Syntax for a Route that renders a component with multiple URL parameters
+         `<Route path='/path/:for/:route' element={ <SomeComponent /> } />`
+   Syntax destructuring for URL parameters with a dynamic path eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`
+
+   To transform a query object into a URLSearchParams object use createSearchparams().
+   import { createSearchParams} from 'react-router-dom';
+   const searchQ = {
+        sort: 'ASC'
+   }
+      const urlQuery = createSearchParams(searchQ);  // will create a query that looks like sort=ASC
 
          
 8. 
