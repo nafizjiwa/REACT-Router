@@ -337,9 +337,9 @@ TO CREATE ROUTES:
    Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`</br>
          
-7. SEARCH BAR FEATURES
+7. SEARCH BAR FEATURES</br>
    Add React Router to a search bar</br>
-   NOTE QUERY PARAMETER AFTER ? ** URL --> `.../search?name=fido`      QUERY PARAMETER --> ?name=fido
+   *NOTE QUERY PARAMETER AFTER ?*  URL --> `.../search?name=fido`      QUERY PARAMETER --> ?name=fido</br>
    User enters a query in search bar that parameter is added to the URL -> then user is redirected to pages of that query</br>
    To update the URL when user enters the query ---> use useNavigation hook Imperatively.</br>
    First, Call useNavigation() in Component:</br>
