@@ -12,11 +12,12 @@ Every URL is essentially a request for some resource and each component of the U
 3. The path (eg. /articles), identifies the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ and assigns values to (search or filter) parameters.
 
-Depending on the application requests coming into a server are handled differently.</br> 
-REACT APPLICATIONS use REACT ROUTER for front end routing solution.</br>
+Depending on the application, requests coming into a server are handled differently.</br> 
+REACT APPLICATIONS use REACT ROUTER for front end ROUTING solutions.</br>
+A Router is needed to work with React Router</br>
 
 ## Routing is defining how an app's different URLs correspond to different views or components.
-##### Users can navigate between pages without a full page reload, providing seamless.</br>
+##### Users can navigate between pages without a full page reload so its seamless.</br>
 
 #### Install React Router to Use It
 ##### Install the react-router-dom package</br>
@@ -54,11 +55,11 @@ See below info about the path is passed down as a prop(2)</br>
 #### Now Define Routes to Render for different URL paths
 ###### *Routes are also called views or components*
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
-Convert from `route Element --> route object --> initialized router`
-To initialize 
+Convert from `route Element --> route object --> initialized router`</br>
+To initialize </br>
 First, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
-Second, `.createBrowserRouter(route object)` accepts route objects to initalizes and create router objects which is passed into router provider.</br>
-Third, <RouteProvider route={appRouter} /> 
+Second, `.createBrowserRouter(route object)` accepts route objects and creates a router object.</br>
+Third, <RouteProvider route={Router} /> router passed to Route Provider</br>
 
 First import it.</br>
 
