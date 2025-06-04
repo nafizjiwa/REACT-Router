@@ -35,6 +35,7 @@ Initialize the router. Call createBrowserRouter</br>
 
 ### Provide a Router 
 ##### Application views, called Routes (React components), need to be rendered.</br>
+
 First, make router available to the app by importing React Router's `RouterProvider`(1)</br>
 The router determines which routes to render at differen URL's</br>
 See below info about the path is passed down as a prop(2)</br>
@@ -53,9 +54,11 @@ See below info about the path is passed down as a prop(2)</br>
 #### Now Define Routes to Render for different URL paths
 ###### *Routes are also called views or components*
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
+Convert from `route Element --> route object --> initialized router`
 To initialize 
-First, `.createRoutesFromElements` converts JSX route elements into route objects </br>
-Second, `.createBrowserRouter` accepts route objects to initalizes and create router objects which is passed into router provider.</br>
+First, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
+Second, `.createBrowserRouter(route object)` accepts route objects to initalizes and create router objects which is passed into router provider.</br>
+Third, <RouteProvider route={appRouter} /> 
 
 First import it.</br>
 
