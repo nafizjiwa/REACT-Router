@@ -382,22 +382,20 @@ TO CREATE ROUTES:
                         <Route path="/path/for/route" element={ <someComponent/>}/></br>
 - To test if the nest Route works enter the URL associated with that path in URL address field</br>
 
-8. To conditionaly REDORECT a user use REACT ROUTER'S Navigate COMPONENT </br>
+8. To conditionaly REDIRECT a user use REACT ROUTER'S Navigate COMPONENT </br>
       In a components return statement use the Navigate component.</br>
-         The <Component/> associated with the path in the 'to' attribute will render
+         The <Component /> associated with the path in the 'to' attribute will render
    
                 Component(){
                   return (
                      <Navigate to='/' />
 
-const navigate = useNavigate();
-Component(){
-      return (
-            navigate('/somepath');  // navigates to /somepath
+const navigate = useNavigate(); </br>
+Component(){ 
+
+      return (  
+            navigate('/somepath');  // navigates to /somepath  
             navigate('-2');  // navigates two paths previous
       ) }
-
-
-
 
 ---------------------------------------------------------------------------------------------------------------------------------
