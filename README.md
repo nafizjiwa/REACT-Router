@@ -213,8 +213,9 @@ All are declarative redirections.</br>
 ##### The UserProfile component renders if loggedIn prop is false Navigate is returned and then rendered sending user to `/` page.</br>
 
 ### `useNavigate()`
-This hook updates the browswer location imperatively by returning a navigate function.</br>
-`const navigate = useNavigate();`</br>
+A hook used to imperatively navigate between pages in a React app </br>
+Returns a navigate function --> `const navigate = useNavigate();`</br>
+
 #### To trigger a redirect
       import { useNavigate } from `react-router-dom`;
 
@@ -256,15 +257,15 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
 ##### Navigate to Different site  `"/list?order=ASC"`
 
       import { useNavigate, createSearchParams } from 'react-router-dom';
-            // get navigate function
+            // get the navigate function
       const navigate = useNavigate();
 
       //Define an object:
       const searchQueryParams = {
-        order: 'ASC'
-        The object is a key: value pair
-        Query Parameter Name: Query Parameter "Value"
-      }
+              order: 'ASC'
+              The object is a key: value pair
+              Query Parameter Name: Query Parameter "Value"
+            }
       // use createSearchParams it akes an object --> transforms to query string (form order=ASC)
       const searchQueryString = createSearchParams(searchQueryParams);
       //Then call navigate: 
@@ -363,14 +364,40 @@ TO CREATE ROUTES:
     Fourth, Component is rendered when text entered into search bar --> redirect to path `/search?keyName=searchValue`</br>
          NOTE* query parameter is not part of path</br>
 
-         A component added to Root Route which matches path `/search`
+         Add a component or nested route to Root Route which renders when path matches `/search`
          <Route path='/search' element={ <SearchComponent/> } />
 
-      To render the matching user search query get the search parameter value from ?keyName=searchValue</br>
-         call useSearchParams() hook and destructure searchParam property it returns
+      To render the matching user search query get the search parameter value from ?keyName=searchPValue</br>
+         call useSearchParams() hook and destructure searchParam property it returns</br>
 
          const [ searchParamPropertyValue ] = useSearchParams()
 
-      Finally use searchParams get method to retrieve the ‘name’ query parameter and replace the value of petNameToFind with it.
+      Finally, use searchParams get method to retrieve the ‘name’ query parameter and replace the value of petNameToFind with it.</br>
   
          const searchParamValue = searchParams.get('nameOfProperty')
+   
+**NOTE** To create a page (feature page) a user can navigate to when they enter a path in the URL</br>
+      1. Add a nested route to the Root Route that renders a component when the URL the user wants</br>
+      to navigate to matches the path associated with that component. </br>
+                        <Route path="/path/for/route" element={ <someComponent/>}/></br>
+      2. To test if the nest Route works enter the URL associated with that path in URL address field</br>
+
+8. To conditionaly REDORECT a user use REACT ROUTER'S Navigate COMPONENT </br>
+      In a components return statement use the Navigate component.</br>
+         The <Component/> associated with the path in the 'to' attribute will render
+   
+                Component(){
+                  return (
+                     <Navigate to='/' />
+
+const navigate = useNavigate();
+Component(){
+      return (
+            navigate('/somepath');  // navigates to /somepath
+            navigate('-2');  // navigates two paths previous
+      ) }
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
