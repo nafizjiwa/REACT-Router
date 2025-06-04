@@ -339,7 +339,7 @@ TO CREATE ROUTES:
          
 7. SEARCH BAR FEATURES</br>
    Add React Router to a search bar</br>
-   *NOTE QUERY PARAMETER AFTER ?*  URL --> `.../search?name=fido`      QUERY PARAMETER --> ?name=fido</br>
+   ***NOTE QUERY PARAMETER AFTER ? ***  URL --> `.../search?name=fido`      QUERY PARAMETER --> ?name=fido</br>
    User enters a query in search bar that parameter is added to the URL -> then user is redirected to pages of that query</br>
    To update the URL when user enters the query ---> use useNavigation hook Imperatively.</br>
    First, Call useNavigation() in Component:</br>
