@@ -376,11 +376,11 @@ TO CREATE ROUTES:
   
          const searchParamValue = searchParams.get('nameOfProperty')
    
-**NOTE** To create a page (feature page) a user can navigate to when they enter a path in the URL</br>
-      1. Add a nested route to the Root Route that renders a component when the URL the user wants</br>
+`**NOTE** To create a page (feature page) a user can navigate to when they enter a path in the URL</br>`
+- Add a nested route to the Root Route that renders a component when the URL the user wants</br>
       to navigate to matches the path associated with that component. </br>
                         <Route path="/path/for/route" element={ <someComponent/>}/></br>
-      2. To test if the nest Route works enter the URL associated with that path in URL address field</br>
+- To test if the nest Route works enter the URL associated with that path in URL address field</br>
 
 8. To conditionaly REDORECT a user use REACT ROUTER'S Navigate COMPONENT </br>
       In a components return statement use the Navigate component.</br>
