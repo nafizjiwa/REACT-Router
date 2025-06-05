@@ -12,6 +12,8 @@ Every URL is essentially a request for some resource and each component of the U
 3. The path (eg. /articles), identifies the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ and assigns values to (search or filter) parameters.
 
+#### HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
+
 Depending on the application, requests coming into a server are handled differently.</br> 
 REACT APPLICATIONS use REACT ROUTER for front end ROUTING solutions.</br>
 A Router is needed to work with React Router</br>
@@ -164,9 +166,9 @@ Render a Route component with a path prop that includes a `dynamic segment` = `:
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 
 #### To Render Dynamic routes the Value of URL Parameters is needed to display the component
-The useParam() hook can access this value 
---> returns an object with URL Parameters names to values<.br>
-route pattern `/posts/:postId` is matched by `/posts/123` --> `params.postId="123"`
+The useParam() hook can access these URL Parameter values </br>
+--> it returns an object of key:value pairs with URL Parameters names to values</br>
+A Route Pattern `/posts/:postId` Matches this `/posts/123` --> params returns --> Key: Value `params.postId="123"`</br>
 
       --> When a user visits /articles/objects Article is rendered.
       import { Link, useParams } from 'react-router-dom';
