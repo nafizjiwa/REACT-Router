@@ -165,7 +165,8 @@ Render a Route component with a path prop that includes a `dynamic segment` = `:
 
 #### To Render Dynamic routes the Value of URL Parameters is needed to display the component
 The useParam() hook can access this value 
---> returns an object with URL Parameters names to values
+--> returns an object with URL Parameters names to values<.br>
+route pattern `/posts/:postId` is matched by `/posts/123` --> `params.postId="123"`
 
       --> When a user visits /articles/objects Article is rendered.
       import { Link, useParams } from 'react-router-dom';
