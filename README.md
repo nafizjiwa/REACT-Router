@@ -142,6 +142,10 @@ Functions can be passed to className or style to customize styling of the NavLin
       //Different styling applied when active 'activeNavLink class' or not active
     > About </NavLink>
 
+NavLink className props can accept a function that receives an object (destructure this object to just a property </br>called isActive). The function body should return the string 'nav-link nav-link-active' if isActive is true</br>
+and 'nav-link' if false.</br>
+NavLink‘s className prop can accept a function that receives a NavLink-related object which includes an isActive property. The isActive property can be used to modify the className string used
+
 ***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
 
 ### DYNAMIC ROUTES
