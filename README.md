@@ -208,6 +208,9 @@ When the path matches /about/secret the `<Secret >` and `<About >` components ar
 ### `<Navigate>` (or Redirect)
 Unlike Link or NavLink, which require user interaction, Navigate automatically redirects users when certain conditions are met to the location specified by the `to` prop.</br>
 All are declarative redirections.</br>
+Remember navigate function can be called with a string path or an integer value </br>
+      // navigate('/somepathSTRING');  // navigates to /somepath </br>
+      // navigate('-2');  // navigates two paths previous</br>
 
       import { Navigate } from 'react-router-dom';
 
