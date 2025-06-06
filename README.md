@@ -205,7 +205,7 @@ The child Route path is relative to the parent Route's path.
 When the path matches /about the `<About >` component is rendered</br>
 When the path matches /about/secret the `<Secret >` and `<About >` components are rendered.
 
-### `<Navigate>` (or Redirect)
+### `<Navigate> COMPONENT` (or Redirect)
 Unlike Link or NavLink, which require user interaction, Navigate automatically redirects users when certain conditions are met to the location specified by the `to` prop.</br>
 All are declarative redirections.</br>
 Remember navigate function can be called with a string path or an integer value </br>
@@ -226,7 +226,7 @@ Remember navigate function can be called with a string path or an integer value 
       }
 ##### The UserProfile component renders if loggedIn prop is false Navigate is returned and then rendered sending user to `/` page.</br>
 
-### `useNavigate()`
+### `useNavigate() HOOK`
 A hook used to imperatively navigate between pages in a React app </br>
 Returns a navigate function --> `const navigate = useNavigate();`</br>
 
