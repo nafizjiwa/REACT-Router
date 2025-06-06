@@ -348,31 +348,37 @@ TO CREATE ROUTES:
    Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`</br>
          
-7. SEARCH BAR FEATURES</br>
-   Add React Router to a search bar</br>
-   ***NOTE QUERY PARAMETER AFTER `?` ***  URL --> `.../search?name=fido`      QUERY PARAMETER --> `?name=fido`</br>
-   User enters a query in search bar that parameter is added to the URL -> then user is redirected to pages of that query</br>
-   To update the URL when user enters the query ---> use useNavigation hook Imperatively.</br>
-   First, Call useNavigation() in Component:</br>
+7.REACT ROUTER FEATURES ON A SEARCH BARS</br>
+   ***NOTE: QUERY PARAMETERS ARE FOUND AFTER QUESTION MARK IN URL</br>
+   `?` ***  URL --> `.../search?name=fido`    QUERY PARAMETER --> `?name=fido`</br>
+   First, User inputs a query in search bar. Second, that parameter OR input </br>
+   upadates the URL -> Third, User is THEN redirected to pages of that query</br>
+   `To update the URL WITH THE A USERS QUERY ---> USE THE useNAVIGATION() HOOK`</br>
+         `Imperatively.`</br>
+         
+   #### 1ST: Call useNavigation() in Component:</br>
    
          const Component = () => {
               const navFunction = useNavigate();
               //...
             }
-    Second, transform query object ==> URLSearchParams object use createSearchparams().</br>
+    #### 2ND: Transform query object ==> URLSearchParams object with `createSearchparams()`</br>
     
           const searchQ = {
                sort: 'ASC'
           }
          const urlQuery = createSearchParams(searchQ);
                      // will create a query that looks like sort=ASC
-    Third, Use the Navigation function to redirect user to path `/search?keyName=searchValue`</br>
+                     
+    #### 3RD: Use the Navigation function to redirect user to SPECIFIC PATH BASED ON</BR>
+    USER'S INPUT ---> `/search?keyName=searchValue`</br>
 
          navigate({
              pathname: '/somepath',
              search: `?${searchQuery}`  // notice you'll need the leading `?`
            });
-    Fourth, Component is rendered when text entered into search bar --> redirect to path `/search?keyName=searchValue`</br>
+    #### 4TH: After searchbar user input --> COMPONENT RENDERED --> REDIRECTION TO PATH</BR>
+          --> `/search?keyName=searchValue`</br>
          NOTE* query parameter is not part of path</br>
 
          Add a component or nested route to Root Route which renders when path matches `/search`
@@ -383,11 +389,11 @@ TO CREATE ROUTES:
 
          const [ searchParamPropertyValue ] = useSearchParams()
 
-      Finally, use searchParams get method to retrieve the ‘name’ query parameter and replace the value of petNameToFind with it.</br>
+     #### FINALLY, RETRIEVE THE 'name' QUERY PARAMETER WITH searchParams get method and replace the value of petNameToFind with it.</br>
   
          const searchParamValue = searchParams.get('nameOfProperty')
    
-`**NOTE** To create a page (feature page) a user can navigate to when they enter a path in the URL</br>`
+`**NOTE** To create a ADDITIONAL PAGES OTHER THAN THE MAIN for users to navigate to based on URL</br>`
 - Add a nested route to the Root Route that renders a component when the URL the user wants</br>
       to navigate to matches the path associated with that component. </br>
                         <Route path="/path/for/route" element={ <someComponent/>}/></br>
