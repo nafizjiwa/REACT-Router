@@ -4,12 +4,13 @@
 
 
 #### First, Understanding URL's
-Every URL is essentially a request for some resource and each component of the URL serves to specify which resource is desired.</br>
+- The URL is a request for resource and </br>
+- Each URL component specifies which resource is desired.
 
 #### URL Components
-1. The scheme (eg. HTTP, HTTPS, mailto, etc), specifies what protocol is used to access the resource.
+1. The scheme (eg. HTTP, HTTPS, mailto, etc), what protocol used to get resource.
 2. The domain (eg. codecademy.com), specifies the website that hosts the resource.
-3. The path (eg. /articles), identifies the page displayed to the user.
+3. The path (eg. /articles), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ and assigns values to (search or filter) parameters.
 
 #### HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
