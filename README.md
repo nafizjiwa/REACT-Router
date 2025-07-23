@@ -18,9 +18,10 @@
 - REACT APPLICATIONS use REACT ROUTER for front end ROUTING.</br>
 - A Router is needed to work with React Router</br>
 
-## Routing is defining how an app's different URLs provide a user different views (apps components).
+## What is Routing?
+- How an app's different URLs provide a user different views (apps components).
 
-##### Users can navigate between pages without a full page reload so its seamless.</br>
+##### Routing allows users to navigate between pages without a full page reload so its seamless.</br>
 
 #### Install React Router to Use It
 ##### Install the react-router-dom package</br>
