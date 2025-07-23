@@ -10,7 +10,7 @@
 #### URL Components
 1. The scheme (eg. HTTP, HTTPS, mailto, etc), what protocol used to get resource.
 2. The domain (eg. infotoggle.com), the website with the resource.
-3. The path (eg. /articles), the page displayed to the user.
+3. The path (eg. /docs/guides), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ are parameter values to search or filter.
 
 #### HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
