@@ -24,15 +24,15 @@
 ##### Routing allows users to navigate between pages without a full page reload so its seamless.</br>
 
 #### Install React Router to Use It
-##### Install the react-router-dom package</br>
+##### In The App Install the react-router-dom package</br>
 
       npm install --save react-router-dom@6
 
-Create a router with `createBrowserRouter`</br>
+##### Create a router. Import `createBrowserRouter`</br>
 
       import { createBrowserRouter } from 'react-router-dom';
 
-Initialize the router. Call createBrowserRouter</br>
+##### Initialize the router by calling createBrowserRouter</br>
 
       import { createBrowserRouter } from 'react-router-dom';
       const router = createBrowserRouter( /* application routes are defined here */ );
