@@ -13,11 +13,10 @@
 3. The path (eg. /docs/guides), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ are parameter values to search or filter.
 
-#### HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
+#### REACT HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
 
-Depending on the application, requests coming into a server are handled differently.</br> 
-REACT APPLICATIONS use REACT ROUTER for front end ROUTING solutions.</br>
-A Router is needed to work with React Router</br>
+- REACT APPLICATIONS use REACT ROUTER for front end ROUTING.</br>
+- A Router is needed to work with React Router</br>
 
 ## Routing is defining how an app's different URLs correspond to different views or components.
 ##### Users can navigate between pages without a full page reload so its seamless.</br>
