@@ -9,7 +9,7 @@
 
 #### URL Components
 1. The scheme (eg. HTTP, HTTPS, mailto, etc), what protocol used to get resource.
-2. The domain (eg. codecademy.com), specifies the website that hosts the resource.
+2. The domain (eg. infotoggle.com), the website with the resource.
 3. The path (eg. /articles), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ are parameter values to search or filter.
 
