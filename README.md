@@ -20,8 +20,7 @@
 
 ## What is Routing?
 - How an app's different URLs provide a user different views (apps components).
-
-##### Routing allows users to navigate between pages without a full page reload so its seamless.</br>
+- Routing allows users to navigate between pages without a page reload so its seamless.</br>
 
 #### Install React Router to Use It
 ##### In The App Install the react-router-dom package</br>
