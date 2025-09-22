@@ -55,7 +55,7 @@
 To initialize Router </br>
 ###### *Convert from `route Element --> route object --> router Initialized`*</br>
 1st, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
-      - <Route> objects defines how the App responds to different URL's.
+      - <Route> objects defines how the App responds to different URL's.</br>
 2nd, `.createBrowserRouter(route object)` accepts <Route> objects and converts to a router object.</br>
 3rd, <RouteProvider route={Router} /> <Router> is passed to Route Provider</br>
 
@@ -79,8 +79,8 @@ To initialize Router </br>
       }
 
 ##### SOME COMPONENTS NEED TO BE RENDERED ON EACH PAGE VIEW LIKE A NAV BAR
-   `1st Define a Root-level component`</BR>
-   `2nd then nest all other routes within the root-level component.`</br>
+   `1st Create a Root-level component`</BR>
+   `2nd Nest all other routes within the root-level component.`</br>
 
       const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={ <Root/> }>  (1)
