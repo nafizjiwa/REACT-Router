@@ -19,8 +19,8 @@
 - A Router is needed to work with React Router</br>
 
 ## What is Routing?
-- APP'S provide userS different views with different URL'S (apps components).
-- Routing navigates users between pages WITHOUT A PAGE RELOAD, seamless.</br>
+- APP'S provide user's different PAGES with different URL'S (apps components).
+- Routing navigates between PAGES WITHOUT A PAGE RELOAD, seamless.</br>
 
 #### Install React Router to Use It
 ##### Install the react-router-dom package</br>
