@@ -41,13 +41,13 @@
 ### Provide a Router 
 ##### Application views, called Routes (React components), need to be rendered.</br>
 
-First, make router available to the app by importing React Router's `RouterProvider`(1)</br>
-The router determines which routes to render at differen URL's</br>
-See below info about the path is passed down as a prop(2)</br>
+1st, Add a router to the app with React Router's `RouterProvider`(1)</br>
+      - The router determines which routes are rendered at differen URL's</br>
+      - Pathes are passed down as props(2)</br>
 
     import { RouterProvider (1), createBrowserRouter } from 'react-router-dom';
     const router = createBrowserRouter( 
-                /* application routes are defined here */ );
+                /*APP's routes defined here */ );
 
     export default function App () {
       return (
@@ -56,7 +56,7 @@ See below info about the path is passed down as a prop(2)</br>
     }
 
 ### ROUTING WITH `<Route>`
-#### Now Define Routes to Render for different URL paths
+#### Now Define Routes to Render at different URL paths
 ###### *Routes are also called views or components*
 2 ways to define routes: JSX or objects. Here we use JSX.</br>
 Convert from `route Element --> route object --> initialized router`</br>
