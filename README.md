@@ -19,55 +19,47 @@
 - A Router is needed to work with React Router</br>
 
 ## What is Routing?
-- APP'S provide user's different PAGES with different URL'S (apps components).
-- Routing navigates between PAGES WITHOUT A PAGE RELOAD, seamless.</br>
+- APP'S provide user's different PAGES using different URL'S/components.
+- Routing NAVIGATES BETWEEN PAGES without a PAGE RELOAD, seamless.</br>
 
-#### Install React Router to Use It
-##### Install the react-router-dom package</br>
+## To Use React Router Install It
+##### Install react-router-dom </br>
 
       npm install --save react-router-dom@6
 
-##### THEN Create a router using `createBrowserRouter`</br>
+## Provide a Router 
+##### App's views are called Routes or React components, They are rendered.</br>
 
-      import { createBrowserRouter } from 'react-router-dom';
-
-##### Initialize the router by calling createBrowserRouter</br>
-
-      import { createBrowserRouter } from 'react-router-dom';
-      
-      const router = createBrowserRouter( /* DEFINE ROUTES HERE */ );
-
-
-### Provide a Router 
-##### Application views, called Routes (React components), need to be rendered.</br>
-
-1st, Add a router to the app with React Router's `RouterProvider`(1)</br>
+1st, Define a router with createBrowserRouter (1)
+2nd, Make Router available to the App with `RouterProvider`(2)</br>
       - The router determines which routes are rendered at differen URL's</br>
-      - Pathes are passed down as props(2)</br>
+      - Pathes are passed down as props(3)</br>
 
-    import { RouterProvider (1), createBrowserRouter } from 'react-router-dom';
-    const router = createBrowserRouter( 
+    import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+    const router = createBrowserRouter(      (1)
                 /*APP's routes defined here */ );
 
     export default function App () {
-      return (
-        <RouterProvider router={ router } /> (2)
+      return (   
+        (2) <RouterProvider router={ router (3)} /> 
       );
     }
 
-### ROUTING WITH `<Route>`
-#### Now Define Routes to Render at different URL paths
-###### *Routes are also called views or components*
-2 ways to define routes: JSX or objects. Here we use JSX.</br>
-Convert from `route Element --> route object --> initialized router`</br>
-To initialize </br>
-First, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
-Second, `.createBrowserRouter(route object)` accepts route objects and creates a router object.</br>
-Third, <RouteProvider route={Router} /> router passed to Route Provider</br>
+## ROUTING WITH `<Route>`
+#### Once Router is set Define the Routes to Render
+###### *Routes are also called views, URL paths or components*
+React Router's <Route> defines routes as either: JSX or objects. Here we use JSX.</br>
+      
+`.createBrowserRouter` accepts an array of <Route> objects</br>
 
-First import it.</br>
+   import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
+Convert from `route Element --> route object --> router Initialized`</br>
+To initialize Router </br>
+1st, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
+      - <Route> objects defines how the App responds to different URL's.
+2nd, `.createBrowserRouter(route object)` accepts <Route> objects and converts to a router object.</br>
+3rd, <RouteProvider route={Router} /> <Router> is passed to Route Provider</br>
 
-      import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
 
 #### `<Route>` decides if a components needs rendering based on its URL path.</br>
 <Route> Includes:
@@ -111,7 +103,7 @@ First import it.</br>
         </Route>
       ));
 
-### LINKING TO ROUTES (Navigating within an app's pages )
+## LINKING TO ROUTES (Navigating within an app's pages )
 
 Navigating between pages of an app causes pages to reload. </br>
 React Router offers 2 anchors to prevent reloading (anchor's default of refresh page is disabled).
@@ -150,7 +142,7 @@ NavLink‘s className prop can accept a function that receives a NavLink-related
 
 ***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
 
-### DYNAMIC ROUTES
+## DYNAMIC ROUTES
 Static route paths match single a path `/about`</br>
 Dynamic route paths match pattern `/about/:someTitle` </br>
 React Router renders their components using the `URL parameters`</br>
@@ -172,7 +164,8 @@ Render a Route component with a path prop that includes a `dynamic segment` = `:
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 
 #### To Render Dynamic routes the Value of URL Parameters is needed to display the component
-The useParam() hook can access these URL Parameter values </br>
+## usParams
+React Router's `useParam()` hook can access these URL Parameter values </br>
 --> it returns an object of key:value pairs with URL Parameters names to values</br>
 A Route Pattern `/posts/:postId` Matches this `/posts/123` --> params returns --> Key: Value `params.postId="123"`</br>
 
@@ -191,7 +184,7 @@ A Route Pattern `/posts/:postId` Matches this `/posts/123` --> params returns --
           </article>
        );
       }
-### NESTED ROUTES
+## NESTED ROUTES
 
 A route (Child) within a route (Parent).
 The child Route path is relative to the parent Route's path.
