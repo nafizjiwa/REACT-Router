@@ -78,8 +78,8 @@ To initialize Router </br>
         );
       }
 
-##### COMPONENTS WHICH NEED RENDERING ON EACH page view
-   `1st Define a Root-level component`
+##### SOME COMPONENTS NEED TO BE RENDERED ON EACH PAGE VIEW LIKE A NAV BAR
+   `1st Define a Root-level component`</BR>
    `2nd then nest all other routes within the root-level component.`</br>
 
       const router = createBrowserRouter(createRoutesFromElements(
