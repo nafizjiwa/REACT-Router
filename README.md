@@ -22,7 +22,7 @@
 - APP'S provide user's different PAGES using different URL'S/components.
 - Routing NAVIGATES BETWEEN PAGES without a PAGE RELOAD, seamless.</br>
 
-## To Use React Router Install It
+### To Use React Router Install It
 ##### Install react-router-dom </br>
 
       npm install --save react-router-dom@6
@@ -48,7 +48,7 @@
 ## ROUTING WITH `<Route>`
 #### Once Router is set up. Define the Routes to Render
 ###### *Routes are also called views, URL paths or components*
-######  *React Router's <Route> defines routes as either: JSX or objects. Here we use JSX.*</br>
+######  *React Router's <Route> defines routes as either: JSX or objects.*</br>
 
    import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
 
@@ -59,12 +59,12 @@ To initialize Router </br>
 2nd, `.createBrowserRouter(route object)` accepts <Route> objects and converts to a router object.</br>
 3rd, <RouteProvider route={Router} /> <Router> is passed to Route Provider</br>
 
-<Route> Includes:
-###### 1. A URL path to render
-###### 2. An ELement prop of the component to render
+<Route> Component's Include:
+###### 1. A URL path = the path which causes the Route to render
+###### 2. An Element prop = the component to render
 `.createRoutesFromElements` 
-      - configures <Route> to render a <PATH> component when the URL matches its path `/about`
-      -Here render <About> when URL matches `/about`
+      - configures <Route> to render a component when the URL matches its path `/about`
+      - Here render <About> component when URL matches `/about`
 
        import About from './About.js';
        import { RouterProvider, createBrowserRouter, Route } from 'react-router-dom';
@@ -78,17 +78,17 @@ To initialize Router </br>
         );
       }
 
-##### For components that need to render with every page view
+##### COMPONENTS WHICH NEED RENDERING ON EACH page view
    `1st Define a Root-level component`
    `2nd then nest all other routes within the root-level component.`</br>
 
       const router = createBrowserRouter(createRoutesFromElements(
-        <Route path='/' element={ <Root/> }>
-          // nested routes here will render along with this <Root/> component
+        <Route path='/' element={ <Root/> }>  (1)
+          // (2) nested routes here will render along with this <Root/> component
         </Route>
       ));
 ##### When Navigating to one of the nested routes
-      What is Rendered ---> the nested route and all <Root />'s components
+      What gets Rendered ---> the nested route and all <Root />'s components
 
 #### Ex. Define Routes: Use createBrowserRouter, createRoutesFromELements and Root's <Route>
 
@@ -99,50 +99,41 @@ To initialize Router </br>
         </Route>
       ));
 
-## LINKING TO ROUTES (Navigating within an app's pages )
-
+## LINKING TO ROUTES (Navigating within an app/webpage site pages )
 Navigating between pages of an app causes pages to reload. </br>
-React Router offers 2 anchors to prevent reloading (anchor's default of refresh page is disabled).
-1. Link
-2. NavLink
-   
-Anchor Tag Syntax: A `to` prop (the redirect) and `wrapped HTML` (Here both redirects to the /about view)
+React Router has 2 anchors to prevent reloading (the anchor's default to refresh is disabled)</br>
+2 Anchor Tags Syntax: Has a `to` prop (the redirect) and `wrapped HTML` 
 
      /* First, Components are imported ... */
-     import { ..., Link, NavLink } from 'react-router-dom';
-     <Link to="/about">About</Link> (to = href)
-     <NavLink to="/about">About</NavLink>
+     import {Link, NavLink } from 'react-router-dom';
+     1 .<Link to="/about">About</Link> (to = href)
+     2. <NavLink to="/about">About</NavLink>
 
-`/` refers to ablsolute paths meaning it navigates from the root directory.
+`/` - ablsolute path - meaning it navigates from the root directory.
 
-#### How is `NavLink` Different?
+#### How is `NavLink` Different? -->  `<NavLink to="path">Click Me</NavLink>`
 
-     <NavLink to="path">Click Me</NavLink>
-
-When property `to`= URL path the link has an `.active` style class added to it.</br>
+When `to` prop path matches URL path it automatically gives the link an `.active`class .</br>
 
 ##### This impacts Styling: </br>
 We can define CSS styles for this .active class name to highlight the viewed content.</br>
-Functions can be passed to className or style to customize styling of the NavLink</br>
+Functions can be passed to className to customize styling of the NavLink</br>
 *Example
 
     <NavLink 
       to="about" 
-      className={ ({ isActive }) => isActive? 'activeNavLink' : 'inactiveNavLink'}
+      className={ ({ isActive }) => isActive? 'nav-link nav-link-active' : 'nav-link'}
       //Different styling applied when active 'activeNavLink class' or not active
     > About </NavLink>
 
-NavLink className props can accept a function that receives an object (destructure this object to just a property </br>called isActive). The function body should return the string 'nav-link nav-link-active' if isActive is true</br>
-and 'nav-link' if false.</br>
-NavLink‘s className prop can accept a function that receives a NavLink-related object which includes an isActive property. The isActive property can be used to modify the className string used
-
-***Above a function is passed to className prop this applies a class dependent on if NavLink is active or not active.
+- Here NavLink className property accepts a function with a destructured object = isActive.</br>  
+***Above className prop applies style dependent on if NavLink is active or not active.</br> 
 
 ## DYNAMIC ROUTES
-Static route paths match single a path `/about`</br>
-Dynamic route paths match pattern `/about/:someTitle` </br>
-React Router renders their components using the `URL parameters`</br>
-URL parameters follow a colon `:NameOfPlacehoder`</br>
+###### *`Static Route paths` match a single path `/about`*</br>
+###### *`Dynamic Route paths` match a pattern `/about/:someTitle` * </br>
+- React Router uses `URL parameters` to create Dynamic Routes </br>
+- URL parameters follow a colon `:NameOfPlacehoder`</br>
 
       const route = createBrowserRouter(createRoutesFromElement(
         <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
