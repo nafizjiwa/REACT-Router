@@ -46,22 +46,19 @@
     }
 
 ## ROUTING WITH `<Route>`
-#### Once Router is set Define the Routes to Render
+#### Once Router is set up. Define the Routes to Render
 ###### *Routes are also called views, URL paths or components*
-React Router's <Route> defines routes as either: JSX or objects. Here we use JSX.</br>
-      
-`.createBrowserRouter` accepts an array of <Route> objects</br>
+######  *React Router's <Route> defines routes as either: JSX or objects. Here we use JSX.*</br>
 
    import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
-Convert from `route Element --> route object --> router Initialized`</br>
+
 To initialize Router </br>
+###### *Convert from `route Element --> route object --> router Initialized`*</br>
 1st, `.createRoutesFromElements(route element)` converts JSX route elements into route objects </br>
       - <Route> objects defines how the App responds to different URL's.
 2nd, `.createBrowserRouter(route object)` accepts <Route> objects and converts to a router object.</br>
 3rd, <RouteProvider route={Router} /> <Router> is passed to Route Provider</br>
 
-
-#### `<Route>` decides if a components needs rendering based on its URL path.</br>
 <Route> Includes:
 ###### 1. A URL path to render
 ###### 2. An ELement prop of the component to render
@@ -81,23 +78,22 @@ To initialize Router </br>
         );
       }
 
-
 ##### For components that need to render with every page view
-   `1st Define a root-level component`
+   `1st Define a Root-level component`
    `2nd then nest all other routes within the root-level component.`</br>
 
-      /* imports ... */
       const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={ <Root/> }>
           // nested routes here will render along with this <Root/> component
         </Route>
       ));
-##### When Navigating to one of the nested routes we Render that view along with all components within <Route>
+##### When Navigating to one of the nested routes
+      What is Rendered ---> the nested route and all <Root />'s components
 
-#### Example of Defining Routes: Between `Root`'s Open and Close tags Use createBrowserRouter, createRoutesFromELements and Roote's <Route>
+#### Ex. Define Routes: Use createBrowserRouter, createRoutesFromELements and Root's <Route>
 
       const router = createBrowserRouter(createRoutesFromElements(
-        <Route path="/" element={ <Root/> }>  {/* root route */}
+        <Route path="/" element={ <Root/> }>  {/* Root's route */}
           <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
           <Route path="myotherpath" element={ <MyOtherComponent/> } />  {/* nested route */}
         </Route>
