@@ -4,12 +4,12 @@
 
 
 #### First, Understanding URL's
-- The URL is a request for resource and </br>
-- Each URL component specifies which resource is desired.
+- URL is a request for resources </br>
+- URL components specify the resource is desired.
 
-#### URL Components
-1. The scheme (eg. HTTP, HTTPS, mailto, etc), what protocol used to get resource.
-2. The domain (eg. infotoggle.com), the website with the resource.
+#### THE URL COMPONENTS
+1. The scheme (eg. HTTP, HTTPS, mailto, etc), the rotocol used to get resources.
+2. The domain (eg. infotoggle.com), the website with the resources.
 3. The path (eg. /docs/guides), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ are parameter values to search or filter.
 
@@ -19,22 +19,23 @@
 - A Router is needed to work with React Router</br>
 
 ## What is Routing?
-- How an app's different URLs provide a user different views (apps components).
-- Routing allows users to navigate between pages without a page reload so its seamless.</br>
+- APP'S provide userS different views with different URL'S (apps components).
+- Routing navigates users between pages WITHOUT A PAGE RELOAD, seamless.</br>
 
 #### Install React Router to Use It
-##### In The App Install the react-router-dom package</br>
+##### Install the react-router-dom package</br>
 
       npm install --save react-router-dom@6
 
-##### Create a router. Import `createBrowserRouter`</br>
+##### THEN Create a router using `createBrowserRouter`</br>
 
       import { createBrowserRouter } from 'react-router-dom';
 
 ##### Initialize the router by calling createBrowserRouter</br>
 
       import { createBrowserRouter } from 'react-router-dom';
-      const router = createBrowserRouter( /* application routes are defined here */ );
+      
+      const router = createBrowserRouter( /* DEFINE ROUTES HERE */ );
 
 
 ### Provide a Router 
