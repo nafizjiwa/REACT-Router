@@ -130,27 +130,25 @@ Functions can be passed to className to customize styling of the NavLink</br>
 ***Above className prop applies style dependent on if NavLink is active or not active.</br> 
 
 ## DYNAMIC ROUTES
-###### *`Static Route paths` match a single path `/about`*</br>
-###### *`Dynamic Route paths` match a pattern `/about/:someTitle` * </br>
-- React Router uses `URL parameters` to create Dynamic Routes </br>
-- URL parameters follow a colon `:NameOfPlacehoder`</br>
+###### * `Static Route paths` match a single path `/about`* </br>
+###### * `Dynamic Route paths` match a pattern `/about/:someTitle` * </br>
+- React Router uses `URL parameters` for Dynamic Routes </br>
+- URL parameter --> `/:URLParameter`</br>
 
       const route = createBrowserRouter(createRoutesFromElement(
         <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
       ))
-Here path property `/articles/:titlePlaceholder` contains URL parameter :titlePlaceholder</br>
-So when the user navigates to pages similar to `/articles/:titlePlaceholder:`</br>
+Here path = `/articles/:titlePlaceholder` the URL parameter = :titlePlaceholder</br>
+- So NAVIGATING to pages similar to `/articles/:titlePlaceholder`, LIKE:</br>
+            - `/articles/react, or /articles/html-or-css` <br>
+- RENDERS --> The `<Article>` component</br>
 
-      /articles/react, or
-      /articles/html-or-css
-The `<Article>` component gets rendered</br>
-
-To Create a dynamic route, 
-Render a Route component with a path prop that includes a `dynamic segment` = `:URLParameter or placeHolder`
+Creating a Dynamic Route, 
+- Render a <Route> component with path prop = `dynamic segment` (:URLParameter or placeHolder)
 
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
+#### Rendering Dynamic routes requires the URL Parametes
 
-#### To Render Dynamic routes the Value of URL Parameters is needed to display the component
 ## usParams
 React Router's `useParam()` hook can access these URL Parameter values </br>
 --> it returns an object of key:value pairs with URL Parameters names to values</br>
