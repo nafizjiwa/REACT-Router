@@ -302,21 +302,20 @@ TO CREATE ROUTES:
                      <Route path="childPathName" element={ <Child/> } /> 
                </Route>
        
+         
 5. URL PARAMETERS IN REACT COMPONENTS
    To add URL parameters to a Route path use a colon `:` --> :A_Dynamic_Path</br>
    
          <Route path='/' element={ <MyComponent/> }>
               <Route path=':myType' element={ <MyTypedComponent /> }/>
-                     {/* this nested route has a dynamic path which*/}
-                     {/* Renders all path similar to paths `/type1` or `/type2` */}
+                     {/* Nested Route renders paths matching `/type1` or `/type2` */}
          </Route>
    
-   To get the value of a URL parameter `:param` call useParam() ==> object</br>
-   Destructure object for param property:</br>
+   To get the value of a URL parameter `:param` call useParam() ==> returns object and Destructure object </br>
          `const { param } = useParams()`</br>
    A Route with multiple URL parameters</br>
          `<Route path='/path/:foo/:bar' element={ <SomeComponent /> } />`</br>
-   A call to useParams() on above Dynamic Route returns an object. Destructuring the object:</br>
+   The useParams() returns object on the Dynamic Route and then destructuring the object:</br>
          `const { foo, bar } = useParams()`</br>
          
 6.REACT ROUTER FEATURES ON A SEARCH BARS</br>
