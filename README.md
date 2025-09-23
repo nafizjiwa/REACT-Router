@@ -322,9 +322,9 @@ TO CREATE ROUTES:
 6.REACT ROUTER FEATURES ON A SEARCH BARS</br>
    ***NOTE: QUERY PARAMETERS ARE FOUND AFTER QUESTION MARK IN URL</br>
    ***  URL --> `.../search?name=fido`    QUERY PARAMETER --> `?name=fido`</br>
-   First, User inputs a query in search bar. </br>
-   Second, that parameter OR input </br>
-   upadates the URL -> Third, User is THEN redirected to pages of that query</br>
+   First, User inputs a query in the search bar. </br>
+   Second, that search query or parameter upadates the URL </br>
+   Third, User is THEN redirected to pages of that query</br>
    `To update the URL WITH THE A USERS QUERY ---> USE THE useNAVIGATION() HOOK`</br>
          `Imperatively.`</br>
          
@@ -334,7 +334,7 @@ TO CREATE ROUTES:
               const navFunction = useNavigate();
               //...
             }
-    #### 2ND: Transform query object ==> URLSearchParams object with `createSearchparams()`</br>
+   #### 2ND: Transform query object ==> URLSearchParams object with `createSearchparams()`</br>
     
           const searchQ = {
                sort: 'ASC'
@@ -342,14 +342,14 @@ TO CREATE ROUTES:
          const urlQuery = createSearchParams(searchQ);
                      // will create a query that looks like sort=ASC
                      
-    #### 3RD: Use the Navigation function to redirect user to SPECIFIC PATH BASED ON</BR>
+   #### 3RD: Use the Navigation function to redirect user to SPECIFIC PATH BASED ON</BR>
     USER'S INPUT ---> `/search?keyName=searchValue`</br>
 
          navigate({
              pathname: '/somepath',
              search: `?${searchQuery}`  // notice you'll need the leading `?`
            });
-    #### 4TH: After searchbar user input --> COMPONENT RENDERED --> REDIRECTION TO PATH</BR>
+   #### 4TH: After searchbar user input --> COMPONENT RENDERED --> REDIRECTION TO PATH</BR>
           --> `/search?keyName=searchValue`</br>
          NOTE* query parameter is not part of path</br>
 
@@ -369,7 +369,7 @@ TO CREATE ROUTES:
 - Add a nested route to the Root Route that renders a component when the URL the user wants</br>
       to navigate to matches the path associated with that component. </br>
                         <Route path="/path/for/route" element={ <someComponent/>}/></br>
-- To test if the nest Route works enter the URL associated with that path in URL address field</br>
+- To test nested Route enter its URL path in URL address field</br>
 
 7. To conditionaly REDIRECT a user use REACT ROUTER'S Navigate COMPONENT </br>
       In a components return statement use the Navigate component.</br>
