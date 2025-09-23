@@ -267,7 +267,7 @@ TO CREATE ROUTES:
       In App's return statement --> <RouterProvider router= {created routes here}</br>
             const nameOfConstant = { JSX Ojbect }</br>
       
-2. CREATE ROUTES
+2. CREATE ROUTES</br>
       React Router functions and components convert JSX Objects to route objects
             `RouteProvider, createRoutesFromElements, createBrowserRouter, Route`
       FIRST, initialize variable where routes are stored.
@@ -281,7 +281,7 @@ TO CREATE ROUTES:
                const router = createBrowserRouter(
                         createRoutesFromElements(<Route path="/somepath" element={ <MyComponent /> }/>) );
 
-3. CREATE NESTED/INDEX ROUTES   
+3. CREATE NESTED/INDEX ROUTES   </br>
    The Root Route '/' contains content which is always displayed across different subpages.
    Nested Route uses its parents' (or root route) path to render
    
@@ -292,7 +292,7 @@ TO CREATE ROUTES:
               </Route>
             ));
    
-4. RENDER NESTED ROUTE
+4. RENDER NESTED ROUTE</br>
    Once Nested routes are created we must render them</br>
    To render nested routes the parent element is told where to render the nested element</br>
    FIRST, import { Outlet } from 'react-router-dom'</br>
@@ -303,7 +303,7 @@ TO CREATE ROUTES:
                </Route>
        
          
-5. URL PARAMETERS IN REACT COMPONENTS
+5. URL PARAMETERS IN REACT COMPONENTS</br>
    To add URL parameters to a Route path use a colon `:` --> :A_Dynamic_Path</br>
    
          <Route path='/' element={ <MyComponent/> }>
@@ -360,7 +360,7 @@ TO CREATE ROUTES:
 
          const [ searchParamPropertyValue ] = useSearchParams()
 
-     #### FINALLY, RETRIEVE THE 'name' QUERY PARAMETER WITH searchParams get method and replace the value of petNameToFind with it.</br>
+   #### FINALLY, RETRIEVE THE 'name' QUERY PARAMETER WITH searchParams get method and replace the value of petNameToFind with it.</br>
   
          const searchParamValue = searchParams.get('nameOfProperty')
    
