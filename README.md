@@ -150,65 +150,58 @@ Creating a Dynamic Route,
 #### Rendering Dynamic routes requires the URL Parametes
 
 ## usParams
-React Router's `useParam()` hook can access these URL Parameter values </br>
---> it returns an object of key:value pairs with URL Parameters names to values</br>
-A Route Pattern `/posts/:postId` Matches this `/posts/123` --> params returns --> Key: Value `params.postId="123"`</br>
+- To access URL Parameter values use React Router's `useParams()`</br>
+ -useParams() --> returns an object of mapped URL Parameters names: their values</br>
 
-      --> When a user visits /articles/objects Article is rendered.
+      --> Visiting /articles/objects renders Article
       import { Link, useParams } from 'react-router-dom';
 
       export default function Article() {
   
-        let { title } = useParams();
-        // title will be equal to the string 'objects' returned by useParams
-         // Destructuring extracts the value of URL param storing in title
-         // The title will be rendered/displayed in the <h1>
+        let { title } = useParams();      // useParams() returns an object
+         // Destructuring extracts the value 
+         // of URL parameter and stores it in title 
         return (
           <article>
-            <h1>{title}</h1>
+            <h1>{title}</h1>   //Article is rendered and title value displayed
           </article>
        );
       }
 ## NESTED ROUTES
-
 A route (Child) within a route (Parent).
 The child Route path is relative to the parent Route's path.
 
       /* imports ... */
       const router = createBrowserRouter(createRoutesFromElement(
-        <Route path='/about' element={ <About/> }> {/* About renders if path starts with /about */}
+        <Route path='/about' element={ <About/> }> **If path matches /about `<About>` Rendered
               <Route path='secret' element={ <Secret/> }>  />  
-              {/* we can exclude /about from this path since it is relative to its parent */}
+                 **about is exclude from this path b/c it's relative to parent
+                 **If path matches /about/secret `<Secret >` and `<About >` Rendered
         </Route> 
       ));
 
-When the path matches /about the `<About >` component is rendered</br>
-When the path matches /about/secret the `<Secret >` and `<About >` components are rendered.
-
-### `<Navigate> COMPONENT` (or Redirect)
-Unlike Link or NavLink, which require user interaction, Navigate automatically redirects users when certain conditions are met to the location specified by the `to` prop.</br>
-All are declarative redirections.</br>
-Remember navigate function can be called with a string path or an integer value </br>
-      // navigate('/somepathSTRING');  // navigates to /somepath </br>
-      // navigate('-2');  // navigates two paths previous</br>
+## `<Navigate> COMPONENT` (or Redirect)
+- Link & NavLink require user interaction
+- <Navigate> when rendered automatically redirects to the location of `to` prop.</br>
+- All declarative redirections.</br>
 
       import { Navigate } from 'react-router-dom';
-
       const UserProfile = ({ loggedIn }) => {
         if (!loggedIn) {
-          return (
-            <Navigate to='/' />
-          )
+          return (  <Navigate to='/' /> )
         }
         return (
           // ... user profile content here
         )  
       }
-##### The UserProfile component renders if loggedIn prop is false Navigate is returned and then rendered sending user to `/` page.</br>
+##### Navigate is rendered sending user to `/` page if loggedIn true .</br>
 
-### `useNavigate() HOOK`
-A hook used to imperatively navigate between pages in a React app </br>
-Returns a navigate function --> `const navigate = useNavigate();`</br>
+## `useNavigate() HOOK`
+- A hook used to imperatively navigate between pages in a React app </br>
+- `const navigate = useNavigate();` Returns a navigate function</br>
+- navigate can use either a path string or an integer value to trigger a redirect </br>
+      - navigate('/somepathSTRINGValue');  // navigates to /somepath </br>
+      - navigate('-2');  // navigates two paths previous</br>
 
 #### To trigger a redirect
       import { useNavigate } from `react-router-dom`;
@@ -221,32 +214,25 @@ Returns a navigate function --> `const navigate = useNavigate();`</br>
         }
         return (
           <form onSubmit={handleSubmit}>
-            {/* form elements */ }
+                  <button onClick={() => navigate(-2)}>
+                   Go Back
+                  </button>
           </form>
         )
       }
-#### Navigate through history stack with a back button
-The funciton navigate(insert integer here) allows positve integers for forward and negative for backward in history</br>
 
-      import { useNavigate } from `react-router-dom`
-
-      export const BackButton = () => {
-        const navigate = useNavigate()
-        return (
-          <button onClick={() => navigate(-1)}>
-            Go Back
-          </button>
-        )
-      }
 ### `QUERY PARAMETERS`
-Syntax: In URL --> `?parameterName=value`.</br>
-useSearchParams() hook is used to access query parameters of a path or alter the path</br>
-SInce a hook --> returns object and a function. `[ searchParams. setSearchParams ] = useSearchParams()`;</br>
-const sortOrder = searchParams.get('query parameter to search'); queryParams object has a get method which retrieves the query parameters value.</br>
-##### So site we want to Visit: `"/list?order=DESC"`</br>
-To get a query parameters value use searchParams: `const sortOrder = searchParams.get('order')`</br>
-To update a query parameter use setSearchParams: onClick = {
-() => setSearchParams( { order: 'ASC'} )}</br>
+- Appeaar in URL following ? --> `?parameterName=value`.</br>
+- useSearchParams() - Grabs query parameter values</br>
+                    - Returns `URLSearchParams object` and a `function` to update it.
+                    - `[ searchParams, setSearchParams ] = useSearchParams()`;
+                    - Use searchParams get method to retrieve the search parameters value.
+                    - searchParams.get('get this search parameters value');
+##### Eg. A site we want to Visit: `"/list?order=DESC"`</br>
+- To get query param value use `searchParams` :
+        - `const sortOrder = searchParams.get('order')`--> DESC</br>
+- To update a query parameter use `setSearchParams`:
+        - onClick = { () => setSearchParams( { order: 'ASC'} )}</br>
 When clicked the the component is rendered and search parmameter updated to 'ASC'</br>
 ##### Navigate to Different site  `"/list?order=ASC"`
 
@@ -260,7 +246,7 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
               The object is a key: value pair
               Query Parameter Name: Query Parameter "Value"
             }
-      // use createSearchParams it akes an object --> transforms to query string (form order=ASC)
+      // use createSearchParams it takes an object --> transforms to query string (form order=ASC)
       const searchQueryString = createSearchParams(searchQueryParams);
       //Then call navigate: 
       //Pass in object with
@@ -272,50 +258,46 @@ When clicked the the component is rendered and search parmameter updated to 'ASC
                   })
 
 
+--------------------------------------------------------------------------------------------------------------------------------------
 TO CREATE ROUTES:
 
 1. SETUP REACT ROUTES</br>
       install react router --> npm install --save react-router-dom@6</br>
-      Check, If installed shows in dependency list</br>
-      Import React Router's RouterProvider to communicate with application</br>
-      import { RouterProvider } = from 'react-router-dom';</br>
-      Use React Router in App return statement --> <RouterProvider router= {routes here}</br>
-      The value of the attribute router equals the routes stored in a constant which is a JSX object.</br>
-      const nameOfConstant = { JSX Ojbect }</br>
+      Import RouterProvider from react-router-dom to enable routing in application</br>
+      In App's return statement --> <RouterProvider router= {created routes here}</br>
+            const nameOfConstant = { JSX Ojbect }</br>
       
 2. CREATE ROUTES
       React Router functions and components convert JSX Objects to route objects
             `RouteProvider, createRoutesFromElements, createBrowserRouter, Route`
       FIRST, initialize variable where routes are stored.
-      For content on a page like nav bars which are always displayed regardless of the
-      path the user is on we need a "root" route to the path "/" which renders the element 
-      Root component.
+      For content which is always displayed on a webpage create "root" route to the path "/" which renders the Root component.
       Initialize a Route called ==> const routeElement = <Route path='/somepath' element{<MyComponent />} />
       Route element can't be inputed in RouterProvider(need a route object).
    
-         First creaate Route object use createRoutesFromElements(routeElement) --> route object
+         First create Route object use createRoutesFromElements(routeElement) --> route object
                const routes = createRoutesFromElements(<Route path='/somepath' element={<MyComponent />} />)
          Second create a router, the route object from createRoutesFromElements input into createBrowserRouter
                const router = createBrowserRouter(
                         createRoutesFromElements(<Route path="/somepath" element={ <MyComponent /> }/>) );
 
-3. CREATE AN INDEX ROUTE OR NESTED ROUTES   
-   The Root Route '/' contains content for layouts where certain elements remain consistent across different subpages a user visits.
-   An Index Route uses its parents' (or root route) path to render
+3. CREATE NESTED/INDEX ROUTES   
+   The Root Route '/' contains content which is always displayed across different subpages.
+   Nested Route uses its parents' (or root route) path to render
    
            const router = createBrowserRouter(createRoutesFromElements(
-              <Route path='/' element={ <Root/> }>       {/* root route or parent */}
+              <Route path='/' element={ <Root/> }>       /* root route or parent */
                 // nested routes here will render along with this <Root/> component
-                     eg. <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
+                     eg. <Route path="mypath" element={ <MyComponent/> } />  /* nested route */
               </Route>
             ));
    
-5. RENDER NESTED ROUTE
-   To render nested routes the parent must be told where to render the nested element
+4. RENDER NESTED ROUTE
+   To render nested routes the parent is told where to render the nested element
    FIRST, IMPORT  Outlet from react-router-dom
    SECOND, Use Outlet in parent route to indicate where child route is rendered
    
-6. URL PARAMETERS IN REACT COMPONENTS
+5. URL PARAMETERS IN REACT COMPONENTS
          Add URL parameters to a Route path with a colon `:` this is a dynamic path
    
          <Route path='/' element={ <MyComponent/> }>
@@ -323,6 +305,7 @@ TO CREATE ROUTES:
                      {/* this nested route has a dynamic path which*/}
                      {/* Renders with paths like `/type1` or `/type2` */}
          </Route>
+   
    To get the value of a URL parameter `:param` call useParam() ==> object</br>
    Destructure object for param property:</br>
          `const { param } = useParams()`</br>
@@ -331,7 +314,7 @@ TO CREATE ROUTES:
    Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
          `const { foo, bar } = useParams()`</br>
          
-7.REACT ROUTER FEATURES ON A SEARCH BARS</br>
+6.REACT ROUTER FEATURES ON A SEARCH BARS</br>
    ***NOTE: QUERY PARAMETERS ARE FOUND AFTER QUESTION MARK IN URL</br>
    `?` ***  URL --> `.../search?name=fido`    QUERY PARAMETER --> `?name=fido`</br>
    First, User inputs a query in search bar. Second, that parameter OR input </br>
@@ -382,7 +365,7 @@ TO CREATE ROUTES:
                         <Route path="/path/for/route" element={ <someComponent/>}/></br>
 - To test if the nest Route works enter the URL associated with that path in URL address field</br>
 
-8. To conditionaly REDIRECT a user use REACT ROUTER'S Navigate COMPONENT </br>
+7. To conditionaly REDIRECT a user use REACT ROUTER'S Navigate COMPONENT </br>
       In a components return statement use the Navigate component.</br>
          The <Component /> associated with the path in the 'to' attribute will render
    
