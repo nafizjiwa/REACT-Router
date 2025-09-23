@@ -293,31 +293,37 @@ TO CREATE ROUTES:
             ));
    
 4. RENDER NESTED ROUTE
-   To render nested routes the parent is told where to render the nested element
-   FIRST, IMPORT  Outlet from react-router-dom
-   SECOND, Use Outlet in parent route to indicate where child route is rendered
+   Once Nested routes are created we must render them</br>
+   To render nested routes the parent element is told where to render the nested element</br>
+   FIRST, import { Outlet } from 'react-router-dom'</br>
+   SECOND, Use Outlet to indicate where in the parent component we want the child component rendered.</br>
    
+               <Route path='/' element={ <Parent/> }>    //In Parent component use <Outline/>  
+                     <Route path="childPathName" element={ <Child/> } /> 
+               </Route>
+       
 5. URL PARAMETERS IN REACT COMPONENTS
-         Add URL parameters to a Route path with a colon `:` this is a dynamic path
+   To add URL parameters to a Route path use a colon `:` --> :A_Dynamic_Path</br>
    
          <Route path='/' element={ <MyComponent/> }>
               <Route path=':myType' element={ <MyTypedComponent /> }/>
                      {/* this nested route has a dynamic path which*/}
-                     {/* Renders with paths like `/type1` or `/type2` */}
+                     {/* Renders all path similar to paths `/type1` or `/type2` */}
          </Route>
    
    To get the value of a URL parameter `:param` call useParam() ==> object</br>
    Destructure object for param property:</br>
          `const { param } = useParams()`</br>
-   Syntax for a Route that renders a component with multiple URL parameters</br>
-         `<Route path='/path/:for/:route' element={ <SomeComponent /> } />`</br>
-   Destructuring syntax for a dynamic path URL parameter eg. /:foo/:bar from the object returned by a call to useParams()
+   A Route with multiple URL parameters</br>
+         `<Route path='/path/:foo/:bar' element={ <SomeComponent /> } />`</br>
+   A call to useParams() on above Dynamic Route returns an object. Destructuring the object:</br>
          `const { foo, bar } = useParams()`</br>
          
 6.REACT ROUTER FEATURES ON A SEARCH BARS</br>
    ***NOTE: QUERY PARAMETERS ARE FOUND AFTER QUESTION MARK IN URL</br>
-   `?` ***  URL --> `.../search?name=fido`    QUERY PARAMETER --> `?name=fido`</br>
-   First, User inputs a query in search bar. Second, that parameter OR input </br>
+   ***  URL --> `.../search?name=fido`    QUERY PARAMETER --> `?name=fido`</br>
+   First, User inputs a query in search bar. </br>
+   Second, that parameter OR input </br>
    upadates the URL -> Third, User is THEN redirected to pages of that query</br>
    `To update the URL WITH THE A USERS QUERY ---> USE THE useNAVIGATION() HOOK`</br>
          `Imperatively.`</br>
