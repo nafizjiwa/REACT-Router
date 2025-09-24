@@ -101,16 +101,14 @@ THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML`
 
 ## DYNAMIC ROUTES
 ###### * `Static Route paths` match a single path `/about`* </br>
-###### * `Dynamic Route paths` match a pattern `/about/:someTitle` * </br>
-- React Router uses `URL parameters` --- `/:URLParameter` for Dynamic Routes </br>
+###### * `Dynamic Route paths` match a pattern `/about/:someTitle   = `/:URLParameter`` * </br>
 
       const route = createBrowserRouter(createRoutesFromElement(
         <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
-      ))
-Here path = `/articles/:titlePlaceholder` the URL parameter = :titlePlaceholder</br>
-- So NAVIGATING to pages similar to `/articles/:titlePlaceholder`, LIKE:</br>
-            - `/articles/react, or /articles/html-or-css` <br>
-- RENDERS --> The `<Article>` component</br>
+      ))                    FROM ABOVE PATH THE URL PARAMETER IS = :titlePlaceholder`
+- So The `<Article>` component is RENDERED FOR ALL PAGES SIMILAR TO:</br>
+            - `/articles/react, or /articles/html-or-css or /articles/anythingelse` <br>
+
 
 ## `useParams()` HOOK
 #### To Render Dynamic routes requires the URL Parametes
