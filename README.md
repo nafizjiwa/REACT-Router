@@ -149,7 +149,7 @@ Creating a Dynamic Route,
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 #### Rendering Dynamic routes requires the URL Parametes
 
-## useParams()
+## `useParams()`
 - To access URL Parameter values use React Router's `useParams()`</br>
  -useParams() --> returns an object of mapped URL Parameters names: their values</br>
 
@@ -180,7 +180,7 @@ The child Route path is relative to the parent Route's path.
         </Route> 
       ));
 
-## `<Navigate> COMPONENT` (or Redirect)
+## `<Navigate>` COMPONENT (or Redirect)
 - Link & NavLink require user interaction
 - <Navigate> when rendered automatically redirects to the location of `to` prop.</br>
 - All declarative redirections.</br>
@@ -196,7 +196,7 @@ The child Route path is relative to the parent Route's path.
       }
 ##### Navigate is rendered sending user to `/` page if loggedIn true .</br>
 
-## `useNavigate() HOOK`
+## `useNavigate()` HOOK
 - A hook used to imperatively navigate between pages in a React app </br>
 - `const navigate = useNavigate();` Returns a navigate function</br>
 - navigate can use either a path string or an integer value to trigger a redirect </br>
@@ -221,7 +221,7 @@ The child Route path is relative to the parent Route's path.
         )
       }
 
-### `QUERY PARAMETERS`
+### QUERY PARAMETERS
 - Appeaar in URL following ? --> `?parameterName=value`.</br>
 - useSearchParams() - Grabs query parameter values</br>
                     - Returns `URLSearchParams object` and a `function` to update it.
