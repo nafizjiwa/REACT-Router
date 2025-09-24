@@ -136,20 +136,18 @@ Are route (Children) relative with a route (Parent).
         </Route> 
       ));
 
-## `<Navigate>` COMPONENT (or Redirect)
+## `<Navigate>` COMPONENT (Declarative Redirect)
 - When <Navigate> is rendered it redirects to the location of `to` prop.</br>
-- All declarative redirections.</br>
 
       import { Navigate } from 'react-router-dom';
       const UserProfile = ({ loggedIn }) => {
         if (!loggedIn) {
           return (  <Navigate to='/' /> )
-        }
-        return (
+        }        **if loggedIn true it sends user to `/` page  .
+        return (        **otherwise user profile shown
           // ... user profile content here
         )  
       }
-##### Navigate is rendered sending user to `/` page if loggedIn true .</br>
 
 ## `useNavigate()` HOOK
 - A hook used to imperatively navigate between pages in a React app </br>
