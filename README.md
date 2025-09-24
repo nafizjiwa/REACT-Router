@@ -149,7 +149,7 @@ Creating a Dynamic Route,
       <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
 #### Rendering Dynamic routes requires the URL Parametes
 
-## usParams
+## useParams()
 - To access URL Parameter values use React Router's `useParams()`</br>
  -useParams() --> returns an object of mapped URL Parameters names: their values</br>
 
