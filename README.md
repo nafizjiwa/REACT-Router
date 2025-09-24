@@ -126,7 +126,7 @@ THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML`
        );
       }
 ## NESTED ROUTES
-Are route (Children) relative with a route (Parent).
+Are route (Children) relative with a route (Parent).</br>
 
       const router = createBrowserRouter(createRoutesFromElement(
         <Route path='/about' element={ <About/> }> ** WHEN PATH matches /about THEN `<About>` Rendered
@@ -136,7 +136,7 @@ Are route (Children) relative with a route (Parent).
         </Route> 
       ));
 
-## `<Navigate>` COMPONENT (Declarative Redirect)
+## `<Navigate>` COMPONENT (Declarative re-direct)
 - When <Navigate> is rendered it redirects to the location of `to` prop.</br>
 
       import { Navigate } from 'react-router-dom';
@@ -149,69 +149,57 @@ Are route (Children) relative with a route (Parent).
         )  
       }
 
-## `useNavigate()` HOOK
-- A hook used to imperatively navigate between pages in a React app </br>
+## `useNavigate()` HOOK (Imperative re-direct)
 - `const navigate = useNavigate();` Returns a navigate function</br>
-- navigate can use either a path string or an integer value to trigger a redirect </br>
-      - navigate('/somepathSTRINGValue');  // navigates to /somepath </br>
-      - navigate('-2');  // navigates two paths previous</br>
-
+- navigate( INPUT either a `string` or `integer` for redirect) </br>
 #### To trigger a redirect
+
       import { useNavigate } from `react-router-dom`;
 
       export const ExampleForm = () => {
         const navigate = useNavigate()
         const handleSubmit = e => {
-          e.preventDefault();
-          navigate('/')
-        }
+          navigate('/')   }     ***Navigates to path '/'
         return (
           <form onSubmit={handleSubmit}>
                   <button onClick={() => navigate(-2)}>
-                   Go Back
+                   Go Back           ***Navigate 2 pages back
                   </button>
           </form>
         )
       }
-
 ## QUERY PARAMETERS
-- Appeaar in URL following ? --> `?parameterName=value`.</br>
+- Appear in THE URL following ? --> `?parameterName=value`.</br>
 - useSearchParams() - Grabs query parameter values</br>
-                    - Returns `URLSearchParams object` and a `function` to update it.
-                    - `[ searchParams, setSearchParams ] = useSearchParams()`;
-                    - Use searchParams get method to retrieve the search parameters value.
-                    - searchParams.get('get this search parameters value');
+                    - Returns `URLSearchParams object` and a `setter function`.</br>
+                    - `[ searchParams, setSearchParams ] = useSearchParams()`</br>
+                    - To retrieve Values use searchParams.get('get this search parameters value');</br>
 ##### Eg. A site we want to Visit: `"/list?order=DESC"`</br>
-- To get query param value use `searchParams` :
+- GET QUERY PARAM VALUES :
         - `const sortOrder = searchParams.get('order')`--> DESC</br>
-- To update a query parameter use `setSearchParams`:
+- SET A NEW QUERY PARAM VALUE USING AN onClick TO UPDATE NEW VALUE:
         - onClick = { () => setSearchParams( { order: 'ASC'} )}</br>
-When clicked the the component is rendered and search parmameter updated to 'ASC'</br>
-##### Navigate to Different site  `"/list?order=ASC"`
 
-      import { useNavigate, createSearchParams } from 'react-router-dom';
-            // get the navigate function
-      const navigate = useNavigate();
+#### WHEN WE WANT TO NAVIGATE to a Different site USING THE QUERY PARAMETER 
+#### USE createSearchParams() AND NAVIGATE TO RE DIRECT TO THE QUERY `"/list?order=ASC"` FROM `/`
 
-      //Define an object:
-      const searchQueryParams = {
-              order: 'ASC'
-              The object is a key: value pair
-              Query Parameter Name: Query Parameter "Value"
-            }
-      // use createSearchParams it takes an object --> transforms to query string (form order=ASC)
-      const searchQueryString = createSearchParams(searchQueryParams);
-      //Then call navigate: 
-      //Pass in object with
-            //1. Pathname: which path to navigate AND
-            //2. Search:  the query parameters to append to path 
-                  navigate({
-                    pathname:'/list',
-                    search: `?${searchQueryString}`
-                  })
+            import { useNavigate, createSearchParams } from 'react-router-dom';
+       **//1. GET NAVIGATE FUNCTION
+            const navigate = useNavigate(); 
+      
+       **//2. DEFINE AN OBJECT WHERE:
+            const searchQueryParams = {        **//The the key is Query Parameter Name:
+                    order: 'ASC'  }            **// and value is Query Parameter "Value"
+            const searchQueryString = createSearchParams(searchQueryParams);
+       **//3. CONVERT OBJECT --> to a QUERY STRING (form of order=ASC)
+       **//FINALLY CALL navigate WITH THE OBJECT, IT HAS:
+            navigate({              
+                pathname:'/list',       //1. Pathname: which path to navigate to 
+                search: `?${searchQueryString}`
+               })                      //2. Search: query parameter we append to path
 
 
---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 TO CREATE ROUTES:
 
 1. SETUP REACT ROUTES</br>
