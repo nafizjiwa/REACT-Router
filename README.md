@@ -259,7 +259,7 @@ TO CREATE ROUTES:
    The useParams() returns object on the Dynamic Route and then destructuring the object:</br>
          `const { foo, bar } = useParams()`</br>
          
-6.REACT ROUTER FEATURES ON A SEARCH BARS</br>
+6. REACT ROUTER FEATURES ON A SEARCH BARS</br>
    ***NOTE: QUERY PARAMETERS ARE FOUND AFTER QUESTION MARK IN URL</br>
    ***For the URL --> `.../search?name=fido`   The QUERY PARAMETER --> `?name=fido`</br>
    First, User inputs a query in the search bar. </br>
