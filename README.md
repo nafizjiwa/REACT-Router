@@ -128,12 +128,10 @@ THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML`
        );
       }
 ## NESTED ROUTES
-A route (Child) within a route (Parent).
-The child Route path is relative to the parent Route's path.
+Are route (Children) relative with a route (Parent).
 
-      /* imports ... */
       const router = createBrowserRouter(createRoutesFromElement(
-        <Route path='/about' element={ <About/> }> **If path matches /about `<About>` Rendered
+        <Route path='/about' element={ <About/> }> ** WHEN PATH matches /about THEN `<About>` Rendered
               <Route path='secret' element={ <Secret/> }>  />  
                  **about is exclude from this path b/c it's relative to parent
                  **If path matches /about/secret `<Secret >` and `<About >` Rendered
