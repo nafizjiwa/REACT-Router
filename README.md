@@ -95,21 +95,19 @@ To initialize Router </br>
       const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/" element={ <Root/> }>  {/* Root's route */}
           <Route path="mypath" element={ <MyComponent/> } />  {/* nested route */}
-          <Route path="myotherpath" element={ <MyOtherComponent/> } />  {/* nested route */}
+          <Route path="myotherpath" element={ <MyOtherComponent/> } />
+              `/` ablsolute path - means it navigates from the root directory.
         </Route>
       ));
 
-## LINKING TO ROUTES (Navigating within an app/webpage site pages )
-Navigating between pages of an app causes pages to reload. </br>
+## LINKING TO ROUTES 
+#### Navigating between pages of an app causes pages to reload. </br>
 React Router has 2 anchors to prevent reloading (the anchor's default to refresh is disabled)</br>
 2 Anchor Tags Syntax: Has a `to` prop (the redirect) and `wrapped HTML` 
 
-     /* First, Components are imported ... */
      import {Link, NavLink } from 'react-router-dom';
      1 .<Link to="/about">About</Link> (to = href)
      2. <NavLink to="/about">About</NavLink>
-
-`/` - ablsolute path - meaning it navigates from the root directory.
 
 #### How is `NavLink` Different? -->  `<NavLink to="path">Click Me</NavLink>`
 
@@ -364,10 +362,10 @@ TO CREATE ROUTES:
   
          const searchParamValue = searchParams.get('nameOfProperty')
 
-7. To conditionaly REDIRECT a user use REACT ROUTER'S Navigate COMPONENT </br>
+7. To REDIRECT a user use REACT ROUTER'S Navigate COMPONENT or useNavigate() hook</br>
       A.    return (
-               <Navigate to='/' />
+               <Navigate to='/' /> declarative
                )
-      B.   const navigate = useNavigate(); </br>
+      B.   const navigate = useNavigate(); imperative</br>
 
 ---------------------------------------------------------------------------------------------------------------------------------
