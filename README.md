@@ -7,7 +7,7 @@
 - URL is a request for desired resources explained in their components </br>
 
 #### THE URL COMPONENTS
-1. The scheme (eg. HTTP, HTTPS, mailto, etc), the rotocol used to get resources.
+1. The protocol used to get resources (eg. HTTP, HTTPS, mailto, etc).
 2. The domain (eg. infotoggle.com), the website with the resources.
 3. The path (eg. /docs/guides), the page displayed to the user.
 4. The query string (eg. ?search=node), after a ‘?’ are parameter values to search or filter.
