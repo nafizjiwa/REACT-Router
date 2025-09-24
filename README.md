@@ -129,8 +129,7 @@ Functions can be passed to className to customize styling of the NavLink</br>
 ## DYNAMIC ROUTES
 ###### * `Static Route paths` match a single path `/about`* </br>
 ###### * `Dynamic Route paths` match a pattern `/about/:someTitle` * </br>
-- React Router uses `URL parameters` for Dynamic Routes </br>
-- URL parameter --> `/:URLParameter`</br>
+- React Router uses `URL parameters` --- `/:URLParameter` for Dynamic Routes </br>
 
       const route = createBrowserRouter(createRoutesFromElement(
         <Route path='/articles/:titlePlaceholder' element={ <Article /> }/>
@@ -140,13 +139,8 @@ Here path = `/articles/:titlePlaceholder` the URL parameter = :titlePlaceholder<
             - `/articles/react, or /articles/html-or-css` <br>
 - RENDERS --> The `<Article>` component</br>
 
-Creating a Dynamic Route, 
-- Render a <Route> component with path prop = `dynamic segment` (:URLParameter or placeHolder)
-
-      <Route path='path/:dynamicSegment' element={ <MyComponent/> }/>
-#### Rendering Dynamic routes requires the URL Parametes
-
 ## `useParams()`
+#### To Render Dynamic routes requires the URL Parametes
 - To access URL Parameter values use React Router's `useParams()`</br>
  -useParams() --> returns an object of mapped URL Parameters names: their values</br>
 
