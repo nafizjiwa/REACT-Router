@@ -143,8 +143,8 @@ Are route (Children) relative with a route (Parent).
       const UserProfile = ({ loggedIn }) => {
         if (!loggedIn) {
           return (  <Navigate to='/' /> )
-        }        **if loggedIn true it sends user to `/` page  .
-        return (        **otherwise user profile shown
+        }        ****if loggedIn true it sends user to `/` page  .
+        return (    ****otherwise user profile shown
           // ... user profile content here
         )  
       }
