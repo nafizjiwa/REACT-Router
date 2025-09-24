@@ -4,8 +4,7 @@
 
 
 #### First, Understanding URL's
-- URL is a request for resources </br>
-- URL components specify the resource is desired.
+- URL is a request for desired resources explained in their components </br>
 
 #### THE URL COMPONENTS
 1. The scheme (eg. HTTP, HTTPS, mailto, etc), the rotocol used to get resources.
