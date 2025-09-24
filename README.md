@@ -14,14 +14,11 @@
 
 #### REACT HOOKS RETURN --> 1. AN OBJECT AND 2. A FUNCTION
 
-- REACT APPLICATIONS use REACT ROUTER for front end ROUTING.</br>
-- A Router is needed to work with React Router</br>
-
+- REACT APPLICATIONS use REACT ROUTER for ROUTING.</br>
 ## What is Routing?
-- APP'S provide user's different PAGES using different URL'S/components.
-- Routing NAVIGATES BETWEEN PAGES without a PAGE RELOAD, seamless.</br>
+- APP'S display different PAGES using different URL'S/components through Routing.</br>
 
-### To Use React Router Install It
+### To Use React Router
 ##### Install react-router-dom </br>
 
       npm install --save react-router-dom@6
@@ -31,12 +28,12 @@
 
 1st, Define a router with createBrowserRouter (1)
 2nd, Make Router available to the App with `RouterProvider`(2)</br>
-      - The router determines which routes are rendered at differen URL's</br>
+      - Router determines which routes to render at differen URL's</br>
       - Pathes are passed down as props(3)</br>
 
     import { RouterProvider, createBrowserRouter } from 'react-router-dom';
     const router = createBrowserRouter(      (1)
-                /*APP's routes defined here */ );
+                /*APP's routes defined here */      );
 
     export default function App () {
       return (   
