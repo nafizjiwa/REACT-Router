@@ -113,18 +113,16 @@ THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML`
 ## `useParams()` HOOK
 #### To Render Dynamic routes requires the URL Parametes
 #### REACT HOOKS RETURN --> 1. AN OBJECT AND 2. AN A SETTER FUNCTION </br>
-- URL Parameter values are accessed with React Router's `useParams()`</br>
-- useParams() --> returns an object of mapped URL Parameters names: values</br>
+- `useParams()` --> gives access to URL parameter values as an object of names: value pairs</br>
 
       --> Visiting /articles/objects renders Article
       import { Link, useParams } from 'react-router-dom';
 
       export default function Article() {
-        let { title } = useParams();      // useParams() returns an object
-         // Destructuring extracts the value 
-         // of URL parameter and stores it in title 
+        let { title } = useParams();      // Destructure returned object 
+         // to access the URL parameters value and store in title
         return (
-            <h1>{title}</h1>   //Article is rendered and title value displayed
+            <h1>{title}</h1>   //when Article is rendered title's value displayed
        );
       }
 ## NESTED ROUTES
@@ -179,7 +177,7 @@ Are route (Children) relative with a route (Parent).
         )
       }
 
-### QUERY PARAMETERS
+## QUERY PARAMETERS
 - Appeaar in URL following ? --> `?parameterName=value`.</br>
 - useSearchParams() - Grabs query parameter values</br>
                     - Returns `URLSearchParams object` and a `function` to update it.
