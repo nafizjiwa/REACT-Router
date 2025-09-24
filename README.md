@@ -114,20 +114,17 @@ THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML`
 #### To Render Dynamic routes requires the URL Parametes
 #### REACT HOOKS RETURN --> 1. AN OBJECT AND 2. AN A SETTER FUNCTION </br>
 - URL Parameter values are accessed with React Router's `useParams()`</br>
-- useParams() --> returns an object of mapped URL Parameters names:values</br>
+- useParams() --> returns an object of mapped URL Parameters names: values</br>
 
       --> Visiting /articles/objects renders Article
       import { Link, useParams } from 'react-router-dom';
 
       export default function Article() {
-  
         let { title } = useParams();      // useParams() returns an object
          // Destructuring extracts the value 
          // of URL parameter and stores it in title 
         return (
-          <article>
             <h1>{title}</h1>   //Article is rendered and title value displayed
-          </article>
        );
       }
 ## NESTED ROUTES
