@@ -137,8 +137,7 @@ Are route (Children) relative with a route (Parent).
       ));
 
 ## `<Navigate>` COMPONENT (or Redirect)
-- Link & NavLink require user interaction
-- <Navigate> when rendered automatically redirects to the location of `to` prop.</br>
+- When <Navigate> is rendered it redirects to the location of `to` prop.</br>
 - All declarative redirections.</br>
 
       import { Navigate } from 'react-router-dom';
