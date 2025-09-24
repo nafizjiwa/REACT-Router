@@ -19,11 +19,11 @@
 ## PROVIDE A ROUTER / SET ROUTER UP 
 ##### App's views are called Routes or React components, They are rendered.</br>
 - The Router determines which routes to render at differen URL's</br> 
-##### Install react-router-dom </br>
+##### After Installing react-router-dom </br>
       `npm install --save react-router-dom@6`
       
     import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-    const router = createBrowserRouter(      (1) THIS DEFINES A ROUTER
+    const router = createBrowserRouter(     (1) THIS DEFINES/INITIALIZES A ROUTER
                 /*APP's ROUTES DEFINED HERE */      );
 
     export default function App () {
@@ -32,22 +32,21 @@
       );                  (3) PATHS ARE PASSED AS PROPS
     }
 
-## ROUTING WITH `<Route>` / DEFINE THE ROUTERS TO RENDER
+## ROUTING WITH `<Route> COMPONENT` / DEFINE THE ROUTES TO RENDER
 ###### *Routes are views, URL paths, or components*
-###### *React Router's defines routes as either: JSX or objects.*</br>
+###### *React Router's DEFINES routes as either: JSX or objects.*</br>
 
 To initialize Router </br>
 ###### *Convert from `route Element --> route object --> router Initialized`*</br>
-1st `.createRoutesFromElements(JSX route element)` --> route objects </br>
-      - <Route> objects defines how the App responds to different URL's.</br>
-2nd `.createBrowserRouter(route object)`--> router objectS.</br>
-3rd <RouteProvider route={Router} /> ROUTER is passed to Route Provider</br>
+1st `.createRoutesFromElements(JSX route element/components)` --> route objects </br>
+2nd `.createBrowserRouter(route object)`--> ROUTER OBJECT.</br>
+3rd <RouteProvider route={Router} /> ROUTER OBJECT is passed to Route Provider</br>
 
+- <Route> COMPONENTS DEFINE ROUTES IN THE ROUTER BY RENDERING CONTENT USING THE URL PATHS.</br>
 <Route path='/about' element={ <About/> } Component's:
-###### 1. A URL path = THIS PATH CAUSES THIS ROUTE TO RENDER
-###### 2. An Element prop = THE COMPONENT RENDERED FOR THIS PATH
-`.createRoutesFromElements` - renders component when URL path matched
-- ABOVE: render <About> component when URL matches `/about`
+###### 1. URL path = THIS ROUTE CAUSES A RENDER AT THIS PATH 
+###### 2. Element prop = RENDER THIS COMPONENT WHEN THIS PATH MATHCES URL
+- ABOVE: RENDER <About> component when URL = `/about`
 
        import About from './About.js';
        import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from `react-router-dom`
@@ -79,24 +78,24 @@ To initialize Router </br>
 ## LINKING TO ROUTES 
 #### Navigating between pages of an app causes pages to reload. </br>
 React Router has 2 anchors to prevent reloading</br>
-THEIR SYNTAX: They have a `to` prop (for redirect) and `wrapped HTML` 
+THEIR SYNTAX: A `to` prop (for redirect) and `wrapped HTML` 
 
      import {Link, NavLink } from 'react-router-dom';
-     1. <Link to="/path">About</Link> (to = href)
+     1. <Link to="/path">About</Link> (to = href; GREAT FOR REPLACE THE ANCHOR TAG)
      2. <NavLink to="/path">About</NavLink>
 
 #### `NavLink` is Different?
 - It gives the link an `.active`class .</br>
 
 ##### This helps Styling: </br>
-- Allows highlight to the viewed content.</br>
+- Highlights link and the viewed content.</br>
 - Functions can be passed to className to customize styling of the NavLink</br>
-            *Example
-            
+
+        *Example
                 <NavLink 
                   to="about" 
                   className={ ({ isActive }) => isActive? 'nav-link nav-link-active' : 'nav-link'}
-                  //Different styling applied when active 'activeNavLink class' or not active
+                  //WE CAN STYE DIFFERENTLY WHEN active 'activeNavLink class' OR `not active`
                 > About </NavLink>
 
 ## DYNAMIC ROUTES
